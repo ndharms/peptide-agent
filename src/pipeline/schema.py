@@ -3,8 +3,8 @@ from schema import Schema, Or, And
 peptide_output_schema = Schema(
     {
         "PEPTIDE_CODE": str,
-        "TARGET_STRUCTURAL_ASSEMBLY": str,
-        "PH": And(int, lambda x: x > 0),
+        "MORPHOLOGY": Or("None", "Fiber", "Sphere", "Aggregate"),
+        "PH": int,
         "CONCENTRATION_LOG_M": int,
         "TEMPERATURE_C": Or("37", "25"),
         "SOLVENT": Or(
@@ -17,10 +17,6 @@ peptide_output_schema = Schema(
             "Diethyl ether",
         ),
     }
-)
-
-example_context = Schema(
-    {peptide_output_schema.schema | {"OUTCOME": Or("SUCCESS", "FAILURE")}}
 )
 
 
