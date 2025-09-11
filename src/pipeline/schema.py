@@ -27,6 +27,6 @@ example_context = Schema(
 paper_context = Schema(
     {
         "DOI": str,
-        "PEPTIDE_CODE": [str],
+        "PAPER_TYPE": Or("REVIEW", "RESEARCH"),
     }
 )
