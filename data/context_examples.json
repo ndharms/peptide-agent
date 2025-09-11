@@ -1,12 +1,12 @@
 [
   {
-    "PEPTIDE_NAME": "...",
     "PEPTIDE_CODE": "...",
     "TARGET_STRUCTURAL_ASSEMBLY": "...",
     "PH": 7,
     "CONCENTRATION_LOG_M": 5,
     "TEMPERATURE_C": "25",
-    "SOLVENT": "Dimethylformamide (DMF)"
+    "SOLVENT": "Dimethylformamide (DMF)",
+    "OUTCOME": "SUCCESS"
   },
   {
     "PEPTIDE_NAME": "...",
@@ -15,6 +15,7 @@
     "PH": 7,
     "CONCENTRATION_LOG_M": 5,
     "TEMPERATURE_C": "25",
-    "SOLVENT": "Dimethylformamide (DMF)"
+    "SOLVENT": "Dimethylformamide (DMF)",
+    "OUTCOME": "SUCCESS"
   }
 ]
