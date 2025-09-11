@@ -20,7 +20,7 @@ our user needs a more robust way to choose a synthesis route with the greatest p
 
 We propose an LLM-based solution to address our user's need.
 This solution will take a user's requested peptide and a target structural assembly (i.e., peptide morphology) as input.
-First, the LLM will search the internet for relevant papers which contain synthesis procedures for identical and/or similar peptides.
+First, the LLM will search the `data/relevant_papers` for relevant papers which contain synthesis procedures for identical and/or similar peptides.
 This will serve as a base understanding which mirrors a "literature review" which a scientist would perform.
 Secondly, we will manually curate examples of successful synthesis and store these in the `data` directory.
 The LLM will reference these examples within the context of the task to predict multiple guesses 
@@ -53,6 +53,8 @@ The LLM will use a well-defined prompt describing how to perform a literature se
 It will focus on 
 
 ### Pt 2) Experimental Condition guesses
+
+
 
 ### Pt 3) Combining results
 
