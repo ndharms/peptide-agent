@@ -1,7 +1,0 @@
-{
-  "PEPTIDE_NAME": str,
-  "PEPTIDE_CODE": str,
-  "TARGET_STRUCTURAL_ASSEMBLY": str,
-  "PH": int,
-  "CONCENTRATION":
-}

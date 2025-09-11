@@ -1,7 +1,6 @@
-import schema
 from schema import Schema, Or, And
 
-schema = schema.Schema(
+peptide_output_schema = Schema(
 {
     "PEPTIDE_NAME": str,
     "PEPTIDE_CODE": str,
@@ -20,3 +19,7 @@ schema = schema.Schema(
     )
 }
 )
+
+example_metadata = Schema({
+    peptide_output_schema.schema | {"OUTCOME": Or("SUCCESS", "FAILURE")}
+})
