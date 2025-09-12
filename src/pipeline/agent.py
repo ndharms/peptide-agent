@@ -235,6 +235,23 @@ def generate_reports_batch(
         + """
 # Output formatting
 
+STRICT OUTPUT FORMAT FOR "report" (exactly 5 lines, in this order; no extra text):
+PH: (a,b) or (a,b] or [a,b) or [a,b]
+Concentration (log M): (a,b) or (a,b] or [a,b) or [a,b]
+Temperature (C): (a,b) or (a,b] or [a,b) or [a,b]
+Solvent: <single word or phrase>
+Estimated Time (minutes): (a,b) or (a,b] or [a,b) or [a,b]
+
+Formatting rules:
+- Use only numeric endpoints for intervals (integers or decimals).
+- Use parentheses/brackets to indicate open/closed bounds as shown.
+- Do not use symbols like < or > (e.g., do NOT write "(<30)"); always provide two numeric endpoints.
+- Do not include any extra commentary, bullet points, headers, or blank lines.
+- The labels must match exactly: "PH", "Concentration (log M)", "Temperature (C)", "Solvent",
+  "Estimated Time (minutes)".
+
+Use this schema as a guide: {schema} for each report.
+
 You will be provided a list of items to predict on.
 For each item, generate a self-assembly report using this schema as a guide: {schema}
 
