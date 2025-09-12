@@ -18,7 +18,7 @@ import pandas as pd
 TOP_K_DEFAULT = 10
 EMBED_MODEL_DEFAULT = "sentence-transformers/all-MiniLM-L6-v2"
 FAISS_CACHE_DIR = Path("data/index/faiss")
-LLM_MODEL_DEFAULT = "gemini-1.5-pro"
+LLM_MODEL_DEFAULT = "gemini-2.5-pro"
 
 
 def create_llm(model: str = LLM_MODEL_DEFAULT):
