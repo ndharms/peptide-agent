@@ -29,7 +29,9 @@ def load_data():
         examples = json.load(f)
     for ex in examples:
         content = json.dumps(ex)
-        json_docs.append({"page_content": content, "metadata": {"source": "context_examples"}})
+        json_docs.append(
+            {"page_content": content, "metadata": {"source": "context_examples"}}
+        )
 
     # Load relevant papers
     paper_docs = []
@@ -55,7 +57,9 @@ def load_data():
     text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     splits = text_splitter.split_documents(all_docs)
 
-    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+    embeddings = HuggingFaceEmbeddings(
+        model_name="sentence-transformers/all-MiniLM-L6-v2"
+    )
     vectorstore = FAISS.from_documents(splits, embeddings)
     return vectorstore
 
@@ -78,7 +82,9 @@ def retrieve_docs(state: AgentState):
 def generate_report(state: AgentState):
     """Generate report using Gemini."""
     llm = ChatGoogleGenerativeAI(
-        model="gemini-1.5-pro", temperature=0, google_api_key=os.getenv("GEMINI_API_KEY")
+        model="gemini-1.5-pro",
+        temperature=0,
+        google_api_key=os.getenv("GEMINI_API_KEY"),
     )
 
     prompt = ChatPromptTemplate.from_template(
@@ -106,7 +112,11 @@ def generate_report(state: AgentState):
     schema_str = str(peptide_output_schema.schema)
 
     report = chain.invoke(
-        {"peptide_code": state["peptide_code"], "contexts": contexts, "schema": schema_str}
+        {
+            "peptide_code": state["peptide_code"],
+            "contexts": contexts,
+            "schema": schema_str,
+        }
     )
     state["report"] = report
     return state
