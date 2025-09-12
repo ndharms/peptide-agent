@@ -136,7 +136,9 @@ class AgentState(TypedDict):
 
 def retrieve_docs(state: AgentState):
     """Retrieve relevant documents for the peptide code and target structural assembly."""
-    vectorstore = get_vectorstore(Path("data"), refresh=state.get("refresh_index", False))
+    vectorstore = get_vectorstore(
+        Path("data"), refresh=state.get("refresh_index", False)
+    )
     k = state.get("top_k", TOP_K_DEFAULT)
     retriever = vectorstore.as_retriever(search_kwargs={"k": k})
     query = f"{state['peptide_code']} {state['target_structural_assembly']}"

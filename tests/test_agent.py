@@ -3,7 +3,10 @@ import json
 import types
 import pytest
 
-def test_load_data_builds_vectorstore(tmp_repo, patch_sys_path, stub_heavy_deps, monkeypatch):
+
+def test_load_data_builds_vectorstore(
+    tmp_repo, patch_sys_path, stub_heavy_deps, monkeypatch
+):
     # Arrange: ensure FAISS returns vectorstore with the same docs passed in
     # Prepare that the VectorStore will hold these docs:
     stub_heavy_deps.retrieval_docs = [
@@ -13,13 +16,17 @@ def test_load_data_builds_vectorstore(tmp_repo, patch_sys_path, stub_heavy_deps,
 
     # Act
     from src.pipeline.agent import load_data
+
     vs = load_data()
 
     # Assert
     # FakeVectorStore has .as_retriever; at least ensure it exists.
     assert hasattr(vs, "as_retriever")
 
-def test_retrieve_docs_filters_success(tmp_repo, patch_sys_path, stub_heavy_deps, monkeypatch):
+
+def test_retrieve_docs_filters_success(
+    tmp_repo, patch_sys_path, stub_heavy_deps, monkeypatch
+):
     # Arrange: Set retrieval docs with a mix of success/non-success
     stub_heavy_deps.retrieval_docs = [
         stub_heavy_deps.FakeDoc("... OUTCOME: SUCCESS ..."),
@@ -29,6 +36,7 @@ def test_retrieve_docs_filters_success(tmp_repo, patch_sys_path, stub_heavy_deps
 
     # Act
     from src.pipeline.agent import retrieve_docs
+
     state = {"peptide_code": "FF", "retrieved_docs": [], "report": ""}
     new_state = retrieve_docs(state)
 
@@ -36,7 +44,10 @@ def test_retrieve_docs_filters_success(tmp_repo, patch_sys_path, stub_heavy_deps
     assert len(new_state["retrieved_docs"]) == 2
     assert all("SUCCESS" in c for c in new_state["retrieved_docs"])
 
-def test_generate_report_uses_schema_and_context(tmp_repo, patch_sys_path, stub_heavy_deps, monkeypatch):
+
+def test_generate_report_uses_schema_and_context(
+    tmp_repo, patch_sys_path, stub_heavy_deps, monkeypatch
+):
     # Arrange: ensure some retrieved docs are present
     contexts = ["CONTEXT A SUCCESS", "CONTEXT B SUCCESS"]
     state = {"peptide_code": "FF", "retrieved_docs": contexts, "report": ""}
@@ -46,10 +57,13 @@ def test_generate_report_uses_schema_and_context(tmp_repo, patch_sys_path, stub_
         def __ror__(self, left):
             # Left is the LLM; we don't need it. `invoke` will be called on this parser.
             return self
+
         def invoke(self, variables):
             # variables contain: peptide_code, contexts, schema
             assert "peptide_code" in variables
-            assert "contexts" in variables and all(s in variables["contexts"] for s in ["CONTEXT A", "CONTEXT B"])
+            assert "contexts" in variables and all(
+                s in variables["contexts"] for s in ["CONTEXT A", "CONTEXT B"]
+            )
             assert "schema" in variables and "TEMPERATURE_C" in variables["schema"]
             # Return a deterministic "report" string (your code expects a string)
             return (
@@ -63,10 +77,12 @@ def test_generate_report_uses_schema_and_context(tmp_repo, patch_sys_path, stub_
 
     # Act
     from src.pipeline.agent import generate_report
+
     out_state = generate_report(state)
 
     # Assert
     assert "report" in out_state and "Report for FF" in out_state["report"]
+
 
 def test_run_agent_integration(tmp_repo, patch_sys_path, stub_heavy_deps, monkeypatch):
     # Arrange: retrieval returns one SUCCESS doc so the flow continues
@@ -76,6 +92,7 @@ def test_run_agent_integration(tmp_repo, patch_sys_path, stub_heavy_deps, monkey
     class StubParser:
         def __ror__(self, left):  # allow llm | parser
             return self
+
         def invoke(self, variables):
             return "OK"
 
@@ -83,6 +100,7 @@ def test_run_agent_integration(tmp_repo, patch_sys_path, stub_heavy_deps, monkey
 
     # Act
     from src.pipeline.agent import run_agent
+
     result = run_agent("FF")
 
     # Assert

@@ -77,6 +77,16 @@ PEPTIDE_AGENT_RESPONSE = Schema(
             The ideal solvent to use in the experiment. 
             """,
         ),
+        # Estimated synthesis time buckets (minutes)
+        "TIME_MINUTES": Or(
+            "(<30)",
+            "(30,60)",
+            "(60,120)",
+            "(120,240)",
+            "(>240)",
+            only_one=True,
+            description="The incubation time of the experiment.",
+        ),
     },
     description="""
     This is the output schema-definition for the LLM response 
@@ -85,10 +95,12 @@ PEPTIDE_AGENT_RESPONSE = Schema(
 )
 
 # Optional: validate paper metadata files
-paper_context_schema = Schema({
-    "DOI": str,
-    "PAPER_TYPE": Or("REVIEW", "RESEARCH"),
-})
+paper_context_schema = Schema(
+    {
+        "DOI": str,
+        "PAPER_TYPE": Or("REVIEW", "RESEARCH"),
+    }
+)
 
 # Backward compat alias if other modules still import this name:
 PEPTIDE_AGENT_RESPONSE = peptide_output_schema

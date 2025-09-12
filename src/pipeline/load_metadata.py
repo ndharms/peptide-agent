@@ -7,6 +7,7 @@ DATA_DIR = pathlib.Path("data")
 PAPERS_DIR = DATA_DIR / "relevant_papers"
 OUT_PATH = DATA_DIR / "context_examples.json"
 
+
 def collect_examples():
     all_examples = []
 
@@ -41,11 +42,13 @@ def collect_examples():
 
     return all_examples
 
+
 def main():
     examples = collect_examples()
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(examples, f, indent=2, ensure_ascii=False)
     print(f"Wrote {len(examples)} examples to {OUT_PATH}")
+
 
 if __name__ == "__main__":
     main()
