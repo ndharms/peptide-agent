@@ -29,6 +29,7 @@ setup(
     python_requires=">=3.11",
     install_requires=[
         "numpy",
+        "schema",
         "requests",
         "pandas",
         "seaborn",
@@ -46,12 +47,12 @@ setup(
     license=about["__license__"],
     zip_safe=False,
     entry_points={
-        "console_scripts": ["hi-template=src.pipeline.main:main"],
+        "console_scripts": ["peptide-agent=src.pipeline.main:main"],
     },
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "Programming Language :: Python :: 3.11",
     ],
-    keywords="package development template",
+    keywords="peptide",
 )
