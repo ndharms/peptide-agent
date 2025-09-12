@@ -28,6 +28,8 @@ peptide_output_schema = Schema({
         "Trifluoroacetic acid (TFA)",
         "Diethyl ether",
     ),
+    # Estimated synthesis time buckets (hours)
+    "TIME_HOURS": Or("(<1)", "(1,2)", "(2,4)", "(4,8)", "(8,24)", "(>24)"),
 })
 
 # Optional: validate paper metadata files
