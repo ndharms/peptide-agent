@@ -108,8 +108,8 @@ def get_vectorstore(
     # Build from scratch
     docs: List[Document] = []
     docs.extend(load_csv_examples(data_dir))
-    docs.extend(load_json_examples(data_dir))
-    docs.extend(load_papers(data_dir))
+    # docs.extend(load_json_examples(data_dir))
+    # docs.extend(load_papers(data_dir))
     if not docs:
         docs = [Document(page_content="No data", metadata={"source": "generated"})]
     splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
