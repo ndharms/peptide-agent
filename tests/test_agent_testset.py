@@ -44,7 +44,7 @@ CONC_LOG_BUCKETS: List[Tuple[float, float]] = [
     (1.0, 2.0),
     (2.0, 3.0),
 ]
-CONC_LOG_BUCKET_STRINGS = ["(-3,-1)", "(-1,0)", "(0,1)", "(1,2)", "(2,3)"]
+CONC_LOG_BUCKET_STRINGS = ["(-3,-1]", "(-1,0]", "(0,1]", "(1,2]", "(2,3]"]
 
 TIME_MIN_BUCKETS: List[Tuple[Optional[float], Optional[float]]] = [
     (None, 30.0),  # (<30)
@@ -109,7 +109,7 @@ def conc_log_to_bucket(log_val: Optional[float]) -> Optional[str]:
     if log_val is None:
         return None
     for (lo, hi), label in zip(CONC_LOG_BUCKETS, CONC_LOG_BUCKET_STRINGS):
-        if log_val >= lo and log_val <= hi:
+        if log_val > lo and log_val <= hi:
             return label
     return None
 
