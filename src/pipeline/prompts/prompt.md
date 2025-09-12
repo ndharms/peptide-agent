@@ -35,11 +35,22 @@ The PDF is the article itself.
 
 ## Context examples
 
-See `data/context_examples.csv` for examples to use as context.
+See `data/Peptide_summary-all.xlsx` for examples to use as context.
 
 We have curated examples of optimal experimental conditions for a variety of peptides.
 Use these data as reference when selecting experimental conditions for new peptides.
 
+Columns of the data are...
+- "PEPTIDE_CODE": The multi-letter code describing the peptide sequence
+- "N-terminal": 
+- "C-terminal":
+- "Morphology": The morphology which the peptide self-assembles into, string category 
+- "PH": The pH that the experiment is run at
+- "CONCENTRATION_mg ml": The concentration of the peptide used in milligrams per milliliter
+- "TEMPERATURE_C": the temperature which the experiment was run at in degrees Celsius
+- "SOLVENT": The solvent used in the experiment
+- "Time (min)": The incubation time for the experiment in minutes
+- "Reference": The DOI reference which maps to this experiment
 
 
 ## Output Schema Definition
@@ -57,7 +68,7 @@ Use the format defined by this schema when returning a set of ideal experimental
 ## Steps
 1. Develop a broad understanding of peptide self-assembly
   1.1. Understand the relevant papers in `data/relevant_papers`. Iterate over each subdirectory of `data/relevant_papers` -- read the `pdf` and reference the `json` file for each paper. 
-  1.2. Answer questions like..
+  1.2. Answer questions like...
     1.1.1. What is a peptide?
     1.1.2. What is self-assembly of a peptide?
     1.1.3. What are the different morphologies which a peptide can self-assemble into?
@@ -73,6 +84,7 @@ Use the format defined by this schema when returning a set of ideal experimental
   3.1. Is there another similar peptide in the examples? If yes, use that as reference.
   3.2. Are there any experimental nuances for this peptide that we ought to consider?
   3.3. How might peptide self-assemble into the target morphology? What may facilitate that?
+
 4. Propose experimental conditions, report your findings 
  
 
