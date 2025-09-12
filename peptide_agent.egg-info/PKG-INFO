@@ -1,4 +1,4 @@
-Metadata-Version: 2.4
+Metadata-Version: 2.1
 Name: peptide-agent
 Version: 0.0.0
 Home-page: 
@@ -28,14 +28,6 @@ Requires-Dist: pypdf
 Requires-Dist: langchain-community
 Requires-Dist: faiss-cpu
 Requires-Dist: sentence-transformers
-Dynamic: classifier
-Dynamic: description
-Dynamic: description-content-type
-Dynamic: keywords
-Dynamic: license
-Dynamic: license-file
-Dynamic: requires-dist
-Dynamic: requires-python
 
 # MIT's `peptide-agent`
 

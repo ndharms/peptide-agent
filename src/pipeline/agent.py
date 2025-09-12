@@ -153,7 +153,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 
 
 def load_template_prompt() -> str:
-    with open(here / ".." / "..", "src/pipeline/prompts/prompt.md") as f:
+    with open(os.path.join(here, "..", "..", "src/pipeline/prompts/prompt.md")) as f:
         prompt = f.read()
     return prompt
 
