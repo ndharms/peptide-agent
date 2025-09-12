@@ -1,4 +1,4 @@
-numpy
+numpy<2
 schema
 requests
 pandas
@@ -13,3 +13,4 @@ langchain-google-genai
 pypdf
 langchain-community
 faiss-cpu
+sentence-transformers

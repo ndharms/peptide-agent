@@ -235,25 +235,35 @@ def generate_reports_batch(
     prompt = ChatPromptTemplate.from_template(
         """
 You are an expert peptide synthesis assistant.
-You will be given a JSON array named "items". Each element has:
+You will be given a JSON array named "items_json". Each element has:
 - id
 - peptide_code
 - target_structural_assembly
 - contexts  (retrieved relevant scientific context as text)
 
-For each element, generate a "report" string recommending optimal experimental
-conditions to achieve the target structural assembly, including:
-- pH
-- Concentration (log M)
-- Temperature (C)
-- Solvent
-- Estimated Time (minutes)
+For each element, produce a "report" string recommending optimal experimental
+conditions to achieve the target structural assembly for that peptide_code.
 
-Use this schema as a guide: {schema}
+STRICT OUTPUT FORMAT FOR "report" (exactly 5 lines, in this order; no extra text):
+PH: (a,b) or (a,b] or [a,b) or [a,b]
+Concentration (log M): (a,b) or (a,b] or [a,b) or [a,b]
+Temperature (C): (a,b) or (a,b] or [a,b) or [a,b]
+Solvent: <single word or phrase>
+Estimated Time (minutes): (a,b) or (a,b] or [a,b) or [a,b]
+
+Formatting rules:
+- Use only numeric endpoints for intervals (integers or decimals).
+- Use parentheses/brackets to indicate open/closed bounds as shown.
+- Do not use symbols like < or > (e.g., do NOT write "(<30)"); always provide two numeric endpoints.
+- Do not include any extra commentary, bullet points, headers, or blank lines.
+- The labels must match exactly: "PH", "Concentration (log M)", "Temperature (C)", "Solvent",
+  "Estimated Time (minutes)".
+
+Use this schema as a guide: {schema} for each report.
 
 Return ONLY a valid JSON array of objects with:
 [
-  {"id": <int>, "report": "<string>"},
+  {{"id": <int>, "report": "<string>"}},
   ...
 ]
 
@@ -265,7 +275,9 @@ Items:
 
     chain = prompt | llm | StrOutputParser()
     schema_str = str(peptide_output_schema.schema)
+    # print(f"DEBUG: {items = }")
     items_json = json.dumps(items, ensure_ascii=False)
+    # print(f"DEBUG: items_json={items_json}")
 
     output = chain.invoke({"schema": schema_str, "items_json": items_json})
 

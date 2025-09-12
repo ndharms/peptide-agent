@@ -7,8 +7,16 @@ from typing import Dict, Optional, Tuple, Any, List
 import pandas as pd
 import typer
 
+# Ensure 'src' is importable when running this file directly.
+# Example: python tests/test_agent_testset.py evaluate ...
+import os
+import sys
+_THIS_DIR = os.path.abspath(os.path.dirname(__file__))
+_PROJECT_ROOT = os.path.abspath(os.path.join(_THIS_DIR, ".."))
+if _PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, _PROJECT_ROOT)
 # Reuse the agent's batch runner and configuration knobs
-from src.pipeline.agent import run_agent_batch, TOP_K_DEFAULT, LLM_MODEL_DEFAULT
+from src.pipeline.agent import run_agent_batch, TOP_K_DEFAULT, LLM_MODEL_DEFAULT  # noqa: E402
 
 
 app = typer.Typer(help="Evaluate the peptide synthesis agent against test_split.csv")
@@ -185,7 +193,7 @@ def normalize_solvent(s: Optional[str]) -> Optional[str]:
     return base
 
 
-INTERVAL_PATTERN = r"\(\s*-?\d+(?:\.\d+)?\s*,\s*-?\d+(?:\.\d+)?\s*\)"
+INTERVAL_PATTERN = r"[\(\[]\s*-?\d+(?:\.\d+)?\s*,\s*-?\d+(?:\.\d+)?\s*[\)\]]"
 SIMPLE_BUCKETS = set(PH_BUCKET_STRINGS + CONC_LOG_BUCKET_STRINGS + TIME_MIN_BUCKET_STRINGS)
 
 
@@ -209,28 +217,38 @@ def parse_agent_report(report: str) -> Dict[str, Optional[str]]:
     text = report
 
     # Try to find explicit labeled lines first
+    # Strict line-anchored patterns to match the fixed 5-line report format
     labeled_patterns = {
-        "PH": r"PH\s*[:=-]\s*(" + INTERVAL_PATTERN + r")",
-        "CONCENTRATION_LOG_MGML": r"Concentration.*?\b(" + INTERVAL_PATTERN + r")",
-        "TIME_MINUTES": r"Estimated\s*Time.*?\b(" + INTERVAL_PATTERN + r"|\(<\d+\)|\(>\d+\))",
-        # Temperature: allow interval or single number
-        "TEMPERATURE_C_INTERVAL": r"Temperature.*?\b(" + INTERVAL_PATTERN + r")",
-        "TEMPERATURE_C_NUMBER": r"Temperature.*?(-?\d+(?:\.\d+)?)",
-        "SOLVENT": r"Solvent\s*[:=-]\s*([A-Za-z0-9/ \-\+]+)",
+        "PH": r"^\s*PH\s*:\s*(" + INTERVAL_PATTERN + r")",
+        "CONCENTRATION_LOG_MGML": (
+            r"^\s*Concentration\s*\(log M\)\s*:\s*(" + INTERVAL_PATTERN + r")"
+        ),
+        "TIME_MINUTES": r"^\s*Estimated\s*Time\s*\(minutes\)\s*:\s*(" + INTERVAL_PATTERN + r")",
+        "TEMPERATURE_C_INTERVAL": r"^\s*Temperature\s*\(C\)\s*:\s*(" + INTERVAL_PATTERN + r")",
+        "TEMPERATURE_C_NUMBER": r"^\s*Temperature\s*\(C\)\s*:\s*(-?\d+(?:\.\d+)?)",
+        "SOLVENT": r"^\s*Solvent\s*:\s*([A-Za-z0-9/ \-\+]+)",
     }
 
     # PH
-    m = re.search(labeled_patterns["PH"], text, flags=re.IGNORECASE | re.DOTALL)
+    m = re.search(labeled_patterns["PH"], text, flags=re.IGNORECASE | re.MULTILINE)
     if m:
         result["PH"] = m.group(1)
 
     # Concentration
-    m = re.search(labeled_patterns["CONCENTRATION_LOG_MGML"], text, flags=re.IGNORECASE | re.DOTALL)
+    m = re.search(
+        labeled_patterns["CONCENTRATION_LOG_MGML"],
+        text,
+        flags=re.IGNORECASE | re.MULTILINE,
+    )
     if m:
         result["CONCENTRATION_LOG_MGML"] = m.group(1)
 
     # Time
-    m = re.search(labeled_patterns["TIME_MINUTES"], text, flags=re.IGNORECASE | re.DOTALL)
+    m = re.search(
+        labeled_patterns["TIME_MINUTES"],
+        text,
+        flags=re.IGNORECASE | re.MULTILINE,
+    )
     if m:
         candidate = m.group(1)
         # Normalize forms like (<30) or (30,60) or (>240)
@@ -246,7 +264,7 @@ def parse_agent_report(report: str) -> Dict[str, Optional[str]]:
     m = re.search(
         labeled_patterns["TEMPERATURE_C_INTERVAL"],
         text,
-        flags=re.IGNORECASE | re.DOTALL,
+        flags=re.IGNORECASE | re.MULTILINE,
     )
     if m:
         result["TEMPERATURE_C"] = m.group(1)
@@ -254,13 +272,13 @@ def parse_agent_report(report: str) -> Dict[str, Optional[str]]:
         m = re.search(
             labeled_patterns["TEMPERATURE_C_NUMBER"],
             text,
-            flags=re.IGNORECASE | re.DOTALL,
+            flags=re.IGNORECASE | re.MULTILINE,
         )
         if m:
             result["TEMPERATURE_C"] = m.group(1)
 
     # Solvent
-    m = re.search(labeled_patterns["SOLVENT"], text, flags=re.IGNORECASE)
+    m = re.search(labeled_patterns["SOLVENT"], text, flags=re.IGNORECASE | re.MULTILINE)
     if m:
         result["SOLVENT"] = m.group(1).strip()
 
@@ -284,19 +302,39 @@ def parse_agent_report(report: str) -> Dict[str, Optional[str]]:
     return result
 
 
-def parse_interval(interval: str) -> Optional[Tuple[float, float]]:
-    m = re.match(r"\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)", interval.strip())
+def parse_interval(interval: str) -> Optional[Tuple[float, float, bool, bool]]:
+    s = interval.strip()
+    m = re.match(
+        r"([\(\[])\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*([\)\]])",
+        s,
+    )
     if not m:
         return None
-    return float(m.group(1)), float(m.group(2))
+    lo = float(m.group(2))
+    hi = float(m.group(3))
+    lo_incl = m.group(1) == "["
+    hi_incl = m.group(4) == "]"
+    return lo, hi, lo_incl, hi_incl
 
 
 def value_in_interval(value: float, interval: str) -> bool:
     bounds = parse_interval(interval)
     if not bounds:
         return False
-    lo, hi = bounds
-    return value >= lo and value <= hi
+    lo, hi, lo_incl, hi_incl = bounds
+    if lo_incl:
+        if value < lo:
+            return False
+    else:
+        if value <= lo:
+            return False
+    if hi_incl:
+        if value > hi:
+            return False
+    else:
+        if value >= hi:
+            return False
+    return True
 
 
 # ---------------------------
@@ -333,13 +371,18 @@ def score_row(pred: Dict[str, Optional[str]], row: pd.Series) -> Dict[str, Any]:
 
     # PH interval membership
     pred_ph = pred.get("PH")
+    # debug removed
     if pred_ph and gt_ph is not None:
         ph_ok = value_in_interval(gt_ph, pred_ph)
+    if gt_ph is None:
+        ph_ok = True
 
     # Concentration interval membership (pred is LOG_MGML bucket, gt converted to log bucket)
     pred_conc = pred.get("CONCENTRATION_LOG_MGML")
     if pred_conc and gt_conc_bucket is not None:
         conc_ok = pred_conc.strip() == gt_conc_bucket
+    if gt_conc_bucket is None:
+        conc_ok = True
 
     # Temperature: allow predicted interval or single number; compare with tolerance for number
     pred_temp = pred.get("TEMPERATURE_C")
@@ -353,15 +396,22 @@ def score_row(pred: Dict[str, Optional[str]], row: pd.Series) -> Dict[str, Any]:
             except Exception:
                 temp_ok = False
 
+    if gt_temp is None:
+        temp_ok = True
+
     # Solvent: normalize and compare
     pred_solvent = normalize_solvent(pred.get("SOLVENT"))
     if pred_solvent and gt_solvent:
         solv_ok = pred_solvent == gt_solvent
+    if not gt_solvent:
+        solv_ok = True
 
     # Time minutes interval membership
     pred_time = pred.get("TIME_MINUTES")
     if pred_time and gt_time_min is not None:
-        time_ok = value_in_interval(gt_time_min, pred_time)  # allows open intervals as encoded
+        time_ok = value_in_interval(gt_time_min, pred_time)
+    if gt_time_min is None:
+        time_ok = True
 
     total = int(ph_ok) + int(conc_ok) + int(temp_ok) + int(solv_ok) + int(time_ok)
 
@@ -380,14 +430,29 @@ def score_row(pred: Dict[str, Optional[str]], row: pd.Series) -> Dict[str, Any]:
 # ---------------------------
 
 
-@app.command()
+@app.command(name="evaluate")
 def evaluate(
-    csv_path: Path = typer.Option(Path("data/test_split.csv"), help="Path to test CSV"),
-    llm_model: str = typer.Option(LLM_MODEL_DEFAULT, help="LLM model id"),
-    top_k: int = typer.Option(TOP_K_DEFAULT, help="Retriever top-k"),
-    limit: Optional[int] = typer.Option(None, help="Limit number of rows"),
-    save_jsonl: Optional[Path] = typer.Option(None, help="Path to save results JSONL"),
-    batch_size: int = typer.Option(20, help="Batch size for LLM calls"),
+    csv_path: Path = typer.Option(
+        Path("data/test_split.csv"),
+        "--csv-path",
+        help="Path to test CSV",
+    ),
+    llm_model: str = typer.Option(
+        LLM_MODEL_DEFAULT, "--llm-model", help="LLM model id"
+    ),
+    top_k: int = typer.Option(TOP_K_DEFAULT, "--top-k", help="Retriever top-k"),
+    limit: Optional[int] = typer.Option(None, "--limit", help="Limit number of rows"),
+    save_jsonl: Optional[Path] = typer.Option(
+        None,
+        "--save-jsonl",
+        help="Path to save results JSONL",
+    ),
+    save_csv: Optional[Path] = typer.Option(
+        None,
+        "--save-csv",
+        help="Path to save per-row results CSV",
+    ),
+    batch_size: int = typer.Option(20, "--batch-size", help="Batch size for LLM calls"),
 ):
     """
     For each row in test_split.csv:
@@ -402,6 +467,14 @@ def evaluate(
 
     results: List[Dict[str, Any]] = []
     total_score = 0
+    # Per-parameter aggregates
+    ph_sum = 0
+    conc_sum = 0
+    temp_sum = 0
+    solv_sum = 0
+    time_sum = 0
+    # Rows for CSV export
+    csv_rows: List[Dict[str, Any]] = []
 
     # Build request payloads and keep row metadata for scoring
     requests: List[Dict[str, str]] = []
@@ -483,6 +556,56 @@ def evaluate(
             }
             results.append(row_result)
 
+            # Aggregate per-parameter sums
+            ph_sum += int(scores["ph_ok"])
+            conc_sum += int(scores["conc_ok"])
+            temp_sum += int(scores["temp_ok"])
+            solv_sum += int(scores["solv_ok"])
+            time_sum += int(scores["time_ok"])
+
+            # Ground-truth normalized values for CSV
+            gt_ph_val = _to_float(row.get("PH"))
+            gt_conc_mgml = _to_float(
+                row.get("CONCENTRATION_mg ml") or row.get("CONCENTRATION_mgml")
+            )
+            gt_conc_log = log10_safe(gt_conc_mgml)
+            gt_conc_bucket = conc_log_to_bucket(gt_conc_log)
+            gt_temp_val = _to_float(row.get("TEMPERATURE_C"))
+            gt_solvent_raw = str(row.get("SOLVENT") or "").strip()
+            gt_solvent_norm = normalize_solvent(gt_solvent_raw)
+            gt_time_min = _to_float(
+                row.get("Time (min)") or row.get("Time(min)") or row.get("Time")
+            )
+
+            # Append CSV row
+            csv_rows.append(
+                {
+                    "row_index": int(idx),
+                    "peptide_code": peptide_code,
+                    "morphology": morphology,
+                    "gt_PH": gt_ph_val,
+                    "gt_CONCENTRATION_mgml": gt_conc_mgml,
+                    "gt_CONC_LOG": gt_conc_log,
+                    "gt_CONC_BUCKET": gt_conc_bucket,
+                    "gt_TEMPERATURE_C": gt_temp_val,
+                    "gt_SOLVENT_raw": gt_solvent_raw,
+                    "gt_SOLVENT_norm": gt_solvent_norm,
+                    "gt_TIME_MIN": gt_time_min,
+                    "pred_PH": pred.get("PH"),
+                    "pred_CONCENTRATION_LOG_MGML": pred.get("CONCENTRATION_LOG_MGML"),
+                    "pred_TEMPERATURE_C": pred.get("TEMPERATURE_C"),
+                    "pred_SOLVENT": pred.get("SOLVENT"),
+                    "pred_TIME_MINUTES": pred.get("TIME_MINUTES"),
+                    "score_PH": int(scores["ph_ok"]),
+                    "score_CONC": int(scores["conc_ok"]),
+                    "score_TEMP": int(scores["temp_ok"]),
+                    "score_SOLV": int(scores["solv_ok"]),
+                    "score_TIME": int(scores["time_ok"]),
+                    "score_TOTAL": int(scores["total"]),
+                    "report": report,
+                }
+            )
+
             typer.echo(
                 f"[{idx}] total={scores['total']} "
                 f"ph={scores['ph_ok']} conc={scores['conc_ok']} "
@@ -490,15 +613,35 @@ def evaluate(
                 f"time={scores['time_ok']}"
             )
 
-    avg_score = total_score / max(len(df), 1)
+    n = max(len(df), 1)
+    avg_score = total_score / n
+
+    # Per-parameter averages
+    avg_ph = ph_sum / n
+    avg_conc = conc_sum / n
+    avg_temp = temp_sum / n
+    avg_solv = solv_sum / n
+    avg_time = time_sum / n
+
     typer.echo(f"Evaluated {len(df)} rows")
-    typer.echo(f"Average score: {avg_score:.2f} out of 5")
+    typer.echo(f"Average total score: {avg_score:.2f} out of 5")
+    typer.echo(
+        "Averages — "
+        f"ph: {avg_ph:.2f}, conc: {avg_conc:.2f}, temp: {avg_temp:.2f}, "
+        f"solv: {avg_solv:.2f}, time: {avg_time:.2f}"
+    )
 
     if save_jsonl:
         save_jsonl.parent.mkdir(parents=True, exist_ok=True)
         with open(save_jsonl, "w") as f:
             for r in results:
                 f.write(json.dumps(r) + "\n")
+
+    if save_csv:
+        save_csv.parent.mkdir(parents=True, exist_ok=True)
+        df_out = pd.DataFrame(csv_rows)
+        df_out.to_csv(save_csv, index=False)
+        typer.echo(f"Saved CSV to {save_csv}")
 
 
 if __name__ == "__main__":

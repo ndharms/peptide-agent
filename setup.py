@@ -28,7 +28,7 @@ setup(
     include_package_data=True,
     python_requires=">=3.11",
     install_requires=[
-        "numpy",
+        "numpy<2",
         "schema",
         "requests",
         "pandas",
@@ -43,6 +43,7 @@ setup(
         "pypdf",
         "langchain-community",
         "faiss-cpu",
+        "sentence-transformers",
     ],
     license=about["__license__"],
     zip_safe=False,

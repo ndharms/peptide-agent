@@ -4,7 +4,8 @@ from schema import Schema, Or
 # The schema package only supports validators and types, not descriptions or only_one.
 # Keep constraints minimal & structural.
 
-PEPTIDE_AGENT_RESPONSE = Schema(
+# PEPTIDE_AGENT_RESPONSE = Schema(
+peptide_output_schema = Schema(
     {
         "PEPTIDE_CODE": Schema(
             str,
@@ -19,10 +20,6 @@ PEPTIDE_AGENT_RESPONSE = Schema(
             "sphere",
             "aggregate",
             only_one=True,
-            desciption="""
-            The ideal (or target) morphology we want the peptide to self-assemble as.
-            A user input.
-            """,
         ),
         "PH": Or(
             "(1,3]",
@@ -33,11 +30,6 @@ PEPTIDE_AGENT_RESPONSE = Schema(
             "(9,11]",
             "(11,14]",
             only_one=True,
-            desciption="""
-        An experimental condition we want to optimize such that
-        it facilitates self-assembly of the peptide into the target morphology.
-        The optimal pH to run the experiment at.
-        """,
         ),
         "CONCENTRATION_LOG_MGML": Or(
             "(-3,-1]",
@@ -46,11 +38,6 @@ PEPTIDE_AGENT_RESPONSE = Schema(
             "(1,2]",
             "(2,3]",
             only_one=True,
-            description="""
-        An experimental condition we want to optimize such that
-        it facilitates self-assembly of the peptide into the target morphology.
-        The ideal concentration of reagents to use. 
-        """,
         ),
         "TEMPERATURE_C": Or(
             "(0,20]",
@@ -58,11 +45,6 @@ PEPTIDE_AGENT_RESPONSE = Schema(
             "(25,37]",
             "(37,90]",
             only_one=True,
-            description="""
-            An experimental condition we want to optimize such that
-            it facilitates self-assembly of the peptide into the target morphology.
-            The ideal temperature to run the experiment at.
-            """,
         ),
         "SOLVENT": Or(
             "Dimethylformamide (DMF)",
@@ -73,11 +55,6 @@ PEPTIDE_AGENT_RESPONSE = Schema(
             "Trifluoroacetic acid (TFA)",
             "Diethyl ether",
             only_one=True,
-            description="""
-            An experimental condition we want to optimize such that
-            it facilitates self-assembly of the peptide into the target morphology.
-            The ideal solvent to use in the experiment. 
-            """,
         ),
         # Estimated synthesis time buckets (minutes)
         "TIME_MINUTES": Or(
@@ -87,7 +64,6 @@ PEPTIDE_AGENT_RESPONSE = Schema(
             "(120,240]",
             "(240, 2880]",
             only_one=True,
-            description="The incubation time of the experiment. Inclusive of ",
         ),
     },
     description="""
@@ -105,4 +81,4 @@ paper_context_schema = Schema(
 )
 
 # Backward compat alias if other modules still import this name:
-PEPTIDE_AGENT_RESPONSE = PEPTIDE_AGENT_RESPONSE
+# PEPTIDE_AGENT_RESPONSE = PEPTIDE_AGENT_RESPONSE

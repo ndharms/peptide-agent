@@ -9,10 +9,11 @@ peptide_agent.egg-info/not-zip-safe
 peptide_agent.egg-info/requires.txt
 peptide_agent.egg-info/top_level.txt
 src/pipeline/__init__.py
+src/pipeline/__main__.py
 src/pipeline/__version__.py
 src/pipeline/agent.py
 src/pipeline/load_metadata.py
 src/pipeline/main.py
-src/pipeline/schema_.py
 src/pipeline/schemas.py
 tests/test_agent.py
+tests/test_agent_testset.py

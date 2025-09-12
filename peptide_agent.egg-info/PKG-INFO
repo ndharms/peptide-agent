@@ -12,7 +12,7 @@ Classifier: Programming Language :: Python :: 3.11
 Requires-Python: >=3.11
 Description-Content-Type: text/markdown
 License-File: LICENSE
-Requires-Dist: numpy
+Requires-Dist: numpy<2
 Requires-Dist: schema
 Requires-Dist: requests
 Requires-Dist: pandas
@@ -27,6 +27,7 @@ Requires-Dist: langchain-google-genai
 Requires-Dist: pypdf
 Requires-Dist: langchain-community
 Requires-Dist: faiss-cpu
+Requires-Dist: sentence-transformers
 Dynamic: classifier
 Dynamic: description
 Dynamic: description-content-type
