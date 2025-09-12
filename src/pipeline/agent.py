@@ -166,7 +166,7 @@ def generate_report(state: AgentState):
     - Concentration (log M)
     - Temperature (C)
     - Solvent
-    - Estimated Time (hours)
+    - Estimated Time (minutes)
 
     Use this schema as a guide: {schema}
     """
