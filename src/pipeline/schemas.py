@@ -14,10 +14,10 @@ PEPTIDE_AGENT_RESPONSE = Schema(
             """,
         ),
         "MORPHOLOGY": Or(
-            "None",
-            "Fiber",
-            "Sphere",
-            "Aggregate",
+            "none",
+            "fiber",
+            "sphere",
+            "aggregate",
             only_one=True,
             desciption="""
             The ideal (or target) morphology we want the peptide to self-assemble as.
@@ -25,13 +25,13 @@ PEPTIDE_AGENT_RESPONSE = Schema(
             """,
         ),
         "PH": Or(
-            "(1,3)",
-            "(3,5)",
-            "(5,6.5)",
-            "(6.5,7.5)",
-            "(7.5,9)",
-            "(9,11)",
-            "(11,14)",
+            "(1,3]",
+            "(3,5]",
+            "(5,6.5]",
+            "(6.5,7.5]",
+            "(7.5,9]",
+            "(9,11]",
+            "(11,14]",
             only_one=True,
             desciption="""
         An experimental condition we want to optimize such that
@@ -40,11 +40,11 @@ PEPTIDE_AGENT_RESPONSE = Schema(
         """,
         ),
         "CONCENTRATION_LOG_MGML": Or(
-            "(-3,-1)",
-            "(-1,0)",
-            "(0,1)",
-            "(1,2)",
-            "(2,3)",
+            "(-3,-1]",
+            "(-1,0]",
+            "(0,1]",
+            "(1,2]",
+            "(2,3]",
             only_one=True,
             description="""
         An experimental condition we want to optimize such that
@@ -53,8 +53,10 @@ PEPTIDE_AGENT_RESPONSE = Schema(
         """,
         ),
         "TEMPERATURE_C": Or(
-            "37",
-            "25",
+            "(0,20]",
+            "(20,25]",
+            "(25,37]",
+            "(37,90]",
             only_one=True,
             description="""
             An experimental condition we want to optimize such that
@@ -79,13 +81,13 @@ PEPTIDE_AGENT_RESPONSE = Schema(
         ),
         # Estimated synthesis time buckets (minutes)
         "TIME_MINUTES": Or(
-            "(<30)",
-            "(30,60)",
-            "(60,120)",
-            "(120,240)",
-            "(>240)",
+            "(0,30]",
+            "(30,60]",
+            "(60,120]",
+            "(120,240]",
+            "(240, 2880]",
             only_one=True,
-            description="The incubation time of the experiment.",
+            description="The incubation time of the experiment. Inclusive of ",
         ),
     },
     description="""
@@ -103,4 +105,4 @@ paper_context_schema = Schema(
 )
 
 # Backward compat alias if other modules still import this name:
-PEPTIDE_AGENT_RESPONSE = peptide_output_schema
+PEPTIDE_AGENT_RESPONSE = PEPTIDE_AGENT_RESPONSE
