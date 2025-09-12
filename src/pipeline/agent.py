@@ -104,7 +104,9 @@ def get_vectorstore(
     index_faiss = cache_dir / "index.faiss"
     index_pkl = cache_dir / "index.pkl"
     if not refresh and index_faiss.exists() and index_pkl.exists():
-        return FAISS.load_local(str(cache_dir), embeddings, allow_dangerous_deserialization=True)
+        return FAISS.load_local(
+            str(cache_dir), embeddings, allow_dangerous_deserialization=True
+        )
     # Build from scratch
     docs: List[Document] = []
     docs.extend(load_csv_examples(data_dir))
@@ -134,7 +136,9 @@ class AgentState(TypedDict):
 
 def retrieve_docs(state: AgentState):
     """Retrieve relevant documents for the peptide code and target structural assembly."""
-    vectorstore = get_vectorstore(Path("data"), refresh=state.get("refresh_index", False))
+    vectorstore = get_vectorstore(
+        Path("data"), refresh=state.get("refresh_index", False)
+    )
     k = state.get("top_k", TOP_K_DEFAULT)
     retriever = vectorstore.as_retriever(search_kwargs={"k": k})
     query = f"{state['peptide_code']} {state['target_structural_assembly']}"
@@ -145,42 +149,34 @@ def retrieve_docs(state: AgentState):
     return state
 
 
+here = os.path.abspath(os.path.dirname(__file__))
+
+
+def load_template_prompt() -> str:
+    with open(here / ".." / "..", "src/pipeline/prompts/prompt.md") as f:
+        prompt = f.read()
+    return prompt
+
+
+def load_template_prompt_without_outputs():
+    prompt = load_template_prompt()
+    template_prompt = prompt.split("# Output formatting")[0]
+    return template_prompt
+
+
 def generate_report(state: AgentState):
     """Generate report using the configured LLM."""
     llm = create_llm(model=state.get("llm_model", LLM_MODEL_DEFAULT))
 
-    prompt = ChatPromptTemplate.from_template(
-        """
-    Given:
-    - PEPTIDE_CODE: {peptide_code}
-    - TARGET_STRUCTURAL_ASSEMBLY: {target_structural_assembly}
-
-    Relevant contexts (papers and successful examples):
-    {contexts}
-
-    Produce a concise, evidence-grounded report recommending optimal experimental
-    conditions for synthesis toward the target structural assembly:
-    - pH
-    - Concentration (log M)
-    - Temperature (C)
-    - Solvent
-    - Estimated Time (minutes)
-
-    Use this schema as a guide: {schema}
-    """
-    )
+    template_prompt = load_template_prompt()
+    prompt = ChatPromptTemplate.from_template(template_prompt)
 
     chain = prompt | llm | StrOutputParser()
-
-    contexts = "\n\n".join(state.get("retrieved_docs", []))
-    schema_str = str(peptide_output_schema.schema)
 
     report = chain.invoke(
         {
             "peptide_code": state["peptide_code"],
             "target_structural_assembly": state["target_structural_assembly"],
-            "contexts": contexts,
-            "schema": schema_str,
         }
     )
     state["report"] = report
@@ -200,7 +196,9 @@ def retrieve_docs_batch(
     retriever = vectorstore.as_retriever(search_kwargs={"k": top_k})
 
     # Build queries like "<code> <target>"
-    queries = [f"{it['peptide_code']} {it['target_structural_assembly']}" for it in items]
+    queries = [
+        f"{it['peptide_code']} {it['target_structural_assembly']}" for it in items
+    ]
 
     contents_per_query: List[List[str]] = []
 
@@ -233,33 +231,12 @@ def generate_reports_batch(
     llm = create_llm(model=llm_model)
 
     prompt = ChatPromptTemplate.from_template(
-        """
-You are an expert peptide synthesis assistant.
-You will be given a JSON array named "items_json". Each element has:
-- id
-- peptide_code
-- target_structural_assembly
-- contexts  (retrieved relevant scientific context as text)
+        load_template_prompt_without_outputs()
+        + """
+# Output formatting
 
-For each element, produce a "report" string recommending optimal experimental
-conditions to achieve the target structural assembly for that peptide_code.
-
-STRICT OUTPUT FORMAT FOR "report" (exactly 5 lines, in this order; no extra text):
-PH: (a,b) or (a,b] or [a,b) or [a,b]
-Concentration (log M): (a,b) or (a,b] or [a,b) or [a,b]
-Temperature (C): (a,b) or (a,b] or [a,b) or [a,b]
-Solvent: <single word or phrase>
-Estimated Time (minutes): (a,b) or (a,b] or [a,b) or [a,b]
-
-Formatting rules:
-- Use only numeric endpoints for intervals (integers or decimals).
-- Use parentheses/brackets to indicate open/closed bounds as shown.
-- Do not use symbols like < or > (e.g., do NOT write "(<30)"); always provide two numeric endpoints.
-- Do not include any extra commentary, bullet points, headers, or blank lines.
-- The labels must match exactly: "PH", "Concentration (log M)", "Temperature (C)", "Solvent",
-  "Estimated Time (minutes)".
-
-Use this schema as a guide: {schema} for each report.
+You will be provided a list of items to predict on.
+For each item, generate a self-assembly report using this schema as a guide: {schema}
 
 Return ONLY a valid JSON array of objects with:
 [
@@ -268,9 +245,10 @@ Return ONLY a valid JSON array of objects with:
 ]
 
 Do not include any explanations outside the JSON.
-Items:
+
+Evaluate these items (as JSON):
 {items_json}
-        """
+"""
     )
 
     chain = prompt | llm | StrOutputParser()
@@ -357,7 +335,9 @@ def run_agent_batch(
     Returns a list of 'report' strings in the same order as input.
     """
     # Retrieve contexts in batch (single vectorstore load)
-    contexts_lists = retrieve_docs_batch(requests, top_k=top_k, refresh_index=refresh_index)
+    contexts_lists = retrieve_docs_batch(
+        requests, top_k=top_k, refresh_index=refresh_index
+    )
 
     # Build batched items payload for a single LLM call
     items_for_llm: List[Dict[str, Any]] = []

@@ -11,12 +11,17 @@ import typer
 # Example: python tests/test_agent_testset.py evaluate ...
 import os
 import sys
+
 _THIS_DIR = os.path.abspath(os.path.dirname(__file__))
 _PROJECT_ROOT = os.path.abspath(os.path.join(_THIS_DIR, ".."))
 if _PROJECT_ROOT not in sys.path:
     sys.path.insert(0, _PROJECT_ROOT)
 # Reuse the agent's batch runner and configuration knobs
-from src.pipeline.agent import run_agent_batch, TOP_K_DEFAULT, LLM_MODEL_DEFAULT  # noqa: E402
+from src.pipeline.agent import (
+    run_agent_batch,
+    TOP_K_DEFAULT,
+    LLM_MODEL_DEFAULT,
+)  # noqa: E402
 
 
 app = typer.Typer(help="Evaluate the peptide synthesis agent against test_split.csv")
@@ -35,7 +40,15 @@ PH_BUCKETS: List[Tuple[float, float]] = [
     (9.0, 11.0),
     (11.0, 14.0),
 ]
-PH_BUCKET_STRINGS = ["(1,3)", "(3,5)", "(5,6.5)", "(6.5,7.5)", "(7.5,9)", "(9,11)", "(11,14)"]
+PH_BUCKET_STRINGS = [
+    "(1,3)",
+    "(3,5)",
+    "(5,6.5)",
+    "(6.5,7.5)",
+    "(7.5,9)",
+    "(9,11)",
+    "(11,14)",
+]
 
 CONC_LOG_BUCKETS: List[Tuple[float, float]] = [
     (-3.0, -1.0),
@@ -194,7 +207,9 @@ def normalize_solvent(s: Optional[str]) -> Optional[str]:
 
 
 INTERVAL_PATTERN = r"[\(\[]\s*-?\d+(?:\.\d+)?\s*,\s*-?\d+(?:\.\d+)?\s*[\)\]]"
-SIMPLE_BUCKETS = set(PH_BUCKET_STRINGS + CONC_LOG_BUCKET_STRINGS + TIME_MIN_BUCKET_STRINGS)
+SIMPLE_BUCKETS = set(
+    PH_BUCKET_STRINGS + CONC_LOG_BUCKET_STRINGS + TIME_MIN_BUCKET_STRINGS
+)
 
 
 def parse_agent_report(report: str) -> Dict[str, Optional[str]]:
@@ -223,8 +238,12 @@ def parse_agent_report(report: str) -> Dict[str, Optional[str]]:
         "CONCENTRATION_LOG_MGML": (
             r"^\s*Concentration\s*\(log M\)\s*:\s*(" + INTERVAL_PATTERN + r")"
         ),
-        "TIME_MINUTES": r"^\s*Estimated\s*Time\s*\(minutes\)\s*:\s*(" + INTERVAL_PATTERN + r")",
-        "TEMPERATURE_C_INTERVAL": r"^\s*Temperature\s*\(C\)\s*:\s*(" + INTERVAL_PATTERN + r")",
+        "TIME_MINUTES": r"^\s*Estimated\s*Time\s*\(minutes\)\s*:\s*("
+        + INTERVAL_PATTERN
+        + r")",
+        "TEMPERATURE_C_INTERVAL": r"^\s*Temperature\s*\(C\)\s*:\s*("
+        + INTERVAL_PATTERN
+        + r")",
         "TEMPERATURE_C_NUMBER": r"^\s*Temperature\s*\(C\)\s*:\s*(-?\d+(?:\.\d+)?)",
         "SOLVENT": r"^\s*Solvent\s*:\s*([A-Za-z0-9/ \-\+]+)",
     }
@@ -351,7 +370,9 @@ def score_row(pred: Dict[str, Optional[str]], row: pd.Series) -> Dict[str, Any]:
     # Ground truths
     gt_ph = _to_float(row.get("PH"))
 
-    gt_conc_mgml = _to_float(row.get("CONCENTRATION_mg ml") or row.get("CONCENTRATION_mgml"))
+    gt_conc_mgml = _to_float(
+        row.get("CONCENTRATION_mg ml") or row.get("CONCENTRATION_mgml")
+    )
     gt_conc_log = log10_safe(gt_conc_mgml)
     gt_conc_bucket = conc_log_to_bucket(gt_conc_log)
 
@@ -360,7 +381,9 @@ def score_row(pred: Dict[str, Optional[str]], row: pd.Series) -> Dict[str, Any]:
     gt_solvent_raw = str(row.get("SOLVENT") or "").strip()
     gt_solvent = normalize_solvent(gt_solvent_raw)
 
-    gt_time_min = _to_float(row.get("Time (min)") or row.get("Time(min)") or row.get("Time"))
+    gt_time_min = _to_float(
+        row.get("Time (min)") or row.get("Time(min)") or row.get("Time")
+    )
 
     # Predictions
     ph_ok = False
