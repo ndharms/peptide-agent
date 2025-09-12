@@ -85,8 +85,16 @@ Use the format defined by this schema when returning a set of ideal experimental
   3.2. Are there any experimental nuances for this peptide that we ought to consider?
   3.3. How might peptide self-assemble into the target morphology? What may facilitate that?
 
-4. Propose experimental conditions, report your findings 
- 
+4. Propose experimental conditions, report your findings
+  4.1. Using your understandings from Sections 1, 2, and 3; propose a set of experimental conditions which would facilitate self-assembly of the peptide into the target morphology. Provide experimental conditions in the format defined in `src/pipeline/schemas.py`.
+  4.2. Challenge your findings by asking questions like...
+    4.2.1. Why would this work?
+    4.2.2. How do you suppose concentration would affect the morphology?
+    4.2.3. How do you suppose the combination of solvent choice and pH would affect the morphology?
+  4.3. Consider your findings for Section 4.1 and 4.2; refine your proposal of experimental conditions which would facilitate self-assembly of the peptide into the target morphology. Provide experimental conditions in the format defined in `src/pipeline/schemas.py`.
+  4.4. Reformat your proposal into the requested output format, and return the output
+5. Done :) Thank you!
+
 
 ## Rules & Exceptions
 
@@ -96,11 +104,22 @@ Use the format defined by this schema when returning a set of ideal experimental
 
 
 # Output formatting
-> Describe the deliverable. What specific "thing" are you expecting.
-> e.g., a PDF of the description written in Times New Roman, 12pt font, single spaced, 1-inch margins on all sides. Include figures with subtitle descriptions, if applicable)
-> e.g., a JSON response with the following schema: {"GRADE": <str>, "RATIONALE": <str>}
 
+Through yor
+You will respond with a block of markdown text in the following format:
 
+"""
+# Peptide Self-Assembly Recipie
+
+# User inputs:
+- Peptide Code: {PEPTIDE_CODE}
+- Target Morphology: {TARGET_MORPHOLOGY}
+
+# System outputs:
+- \log_{10} (Concentration [mg/ml]) = {CONCENTRATION_LOG_MGML}
+- pH = {PH}
+- 
+"""
 # Examples
 > If you can, provide an example or two of how the AI should approach the task and what kind of outputs it should expect.
 > By providing one or more high-quality examples of the task and the expected output, you give the model a concrete pattern to follow.
