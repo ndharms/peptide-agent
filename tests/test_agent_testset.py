@@ -7,8 +7,8 @@ from typing import Dict, Optional, Tuple, Any, List
 import pandas as pd
 import typer
 
-# Reuse the agent's runner and configuration knobs
-from src.pipeline.agent import run_agent, TOP_K_DEFAULT, LLM_MODEL_DEFAULT
+# Reuse the agent's batch runner and configuration knobs
+from src.pipeline.agent import run_agent_batch, TOP_K_DEFAULT, LLM_MODEL_DEFAULT
 
 
 app = typer.Typer(help="Evaluate the peptide synthesis agent against test_split.csv")
@@ -387,6 +387,7 @@ def evaluate(
     top_k: int = typer.Option(TOP_K_DEFAULT, help="Retriever top-k"),
     limit: Optional[int] = typer.Option(None, help="Limit number of rows"),
     save_jsonl: Optional[Path] = typer.Option(None, help="Path to save results JSONL"),
+    batch_size: int = typer.Option(20, help="Batch size for LLM calls"),
 ):
     """
     For each row in test_split.csv:
@@ -399,20 +400,32 @@ def evaluate(
     if limit is not None:
         df = df.head(limit)
 
-    results = []
+    results: List[Dict[str, Any]] = []
     total_score = 0
+
+    # Build request payloads and keep row metadata for scoring
+    requests: List[Dict[str, str]] = []
+    rows_meta: List[Tuple[int, pd.Series, str, str]] = []
+
+    # Resolve peptide_code and morphology for each row first
+    code_candidates = [
+        "PEPTIDE_CODE",
+        "Peptide Code",
+        "Peptide",
+        "PEPTIDE",
+        "Sequence",
+        "PEPTIDE CODE",
+        "PEPTIDE_code",
+        "PEPTIDE CODE ",
+    ]
+    morph_candidates = [
+        "Morphology",
+        "MORPHOLOGY",
+        "Target",
+        "TARGET_STRUCTURAL_ASSEMBLY",
+    ]
+
     for idx, row in df.iterrows():
-        # Resolve peptide_code robustly across different column namings
-        code_candidates = [
-            "PEPTIDE_CODE",
-            "Peptide Code",
-            "Peptide",
-            "PEPTIDE",
-            "Sequence",
-            "PEPTIDE CODE",
-            "PEPTIDE_code",
-            "PEPTIDE CODE ",
-        ]
         peptide_code = ""
         for col in code_candidates:
             if col in df.columns:
@@ -421,16 +434,8 @@ def evaluate(
                     peptide_code = str(val).strip()
                     break
         if not peptide_code:
-            # Fallback: try first column if named differently in provided CSV
             peptide_code = str(row.iloc[0]).strip()
 
-        # Resolve morphology/target structural assembly
-        morph_candidates = [
-            "Morphology",
-            "MORPHOLOGY",
-            "Target",
-            "TARGET_STRUCTURAL_ASSEMBLY",
-        ]
         morphology = ""
         for col in morph_candidates:
             if col in df.columns:
@@ -441,35 +446,49 @@ def evaluate(
         if not morphology:
             morphology = "none"
 
-        # Call agent
-        report = run_agent(
-            peptide_code=peptide_code,
-            target_structural_assembly=morphology,
+        requests.append(
+            {
+                "peptide_code": peptide_code,
+                "target_structural_assembly": morphology,
+            }
+        )
+        rows_meta.append((int(idx), row, peptide_code, morphology))
+
+    # Process in batches to reduce API calls
+    for start in range(0, len(requests), batch_size):
+        end = min(start + batch_size, len(requests))
+        chunk_reqs = requests[start:end]
+        chunk_meta = rows_meta[start:end]
+
+        reports = run_agent_batch(
+            requests=chunk_reqs,
             top_k=top_k,
             llm_model=llm_model,
-            refresh_index=False,  # use cached FAISS index for perf
+            refresh_index=False,  # reuse cached FAISS index
         )
 
-        # Parse and score
-        pred = parse_agent_report(report or "")
-        scores = score_row(pred, row)
-        total_score += scores["total"]
+        # Parse, score, and collect results
+        for (idx, row, peptide_code, morphology), report in zip(chunk_meta, reports):
+            pred = parse_agent_report(report or "")
+            scores = score_row(pred, row)
+            total_score += scores["total"]
 
-        row_result = {
-            "row_index": int(idx),
-            "peptide_code": peptide_code,
-            "morphology": morphology,
-            "pred": pred,
-            "scores": scores,
-            "report": report,
-        }
-        results.append(row_result)
+            row_result = {
+                "row_index": int(idx),
+                "peptide_code": peptide_code,
+                "morphology": morphology,
+                "pred": pred,
+                "scores": scores,
+                "report": report,
+            }
+            results.append(row_result)
 
-        typer.echo(
-            f"[{idx}] total={scores['total']} "
-            f"ph={scores['ph_ok']} conc={scores['conc_ok']} "
-            f"temp={scores['temp_ok']} solv={scores['solv_ok']} time={scores['time_ok']}"
-        )
+            typer.echo(
+                f"[{idx}] total={scores['total']} "
+                f"ph={scores['ph_ok']} conc={scores['conc_ok']} "
+                f"temp={scores['temp_ok']} solv={scores['solv_ok']} "
+                f"time={scores['time_ok']}"
+            )
 
     avg_score = total_score / max(len(df), 1)
     typer.echo(f"Evaluated {len(df)} rows")

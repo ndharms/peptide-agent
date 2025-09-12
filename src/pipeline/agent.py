@@ -6,7 +6,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langgraph.graph import StateGraph, END
-from typing import TypedDict, List
+from typing import TypedDict, List, Dict, Any
 from langchain_core.documents import Document
 from src.pipeline.schemas import peptide_output_schema
 import json
@@ -104,9 +104,7 @@ def get_vectorstore(
     index_faiss = cache_dir / "index.faiss"
     index_pkl = cache_dir / "index.pkl"
     if not refresh and index_faiss.exists() and index_pkl.exists():
-        return FAISS.load_local(
-            str(cache_dir), embeddings, allow_dangerous_deserialization=True
-        )
+        return FAISS.load_local(str(cache_dir), embeddings, allow_dangerous_deserialization=True)
     # Build from scratch
     docs: List[Document] = []
     docs.extend(load_csv_examples(data_dir))
@@ -136,9 +134,7 @@ class AgentState(TypedDict):
 
 def retrieve_docs(state: AgentState):
     """Retrieve relevant documents for the peptide code and target structural assembly."""
-    vectorstore = get_vectorstore(
-        Path("data"), refresh=state.get("refresh_index", False)
-    )
+    vectorstore = get_vectorstore(Path("data"), refresh=state.get("refresh_index", False))
     k = state.get("top_k", TOP_K_DEFAULT)
     retriever = vectorstore.as_retriever(search_kwargs={"k": k})
     query = f"{state['peptide_code']} {state['target_structural_assembly']}"
@@ -191,6 +187,117 @@ def generate_report(state: AgentState):
     return state
 
 
+def retrieve_docs_batch(
+    items: List[Dict[str, str]],
+    top_k: int = TOP_K_DEFAULT,
+    refresh_index: bool = False,
+) -> List[List[str]]:
+    """
+    Batch-retrieve contexts for multiple (peptide_code, target_structural_assembly) items.
+    Returns a list parallel to items, where each element is a list[str] of page contents.
+    """
+    vectorstore = get_vectorstore(Path("data"), refresh=refresh_index)
+    retriever = vectorstore.as_retriever(search_kwargs={"k": top_k})
+
+    # Build queries like "<code> <target>"
+    queries = [f"{it['peptide_code']} {it['target_structural_assembly']}" for it in items]
+
+    contents_per_query: List[List[str]] = []
+
+    # Prefer batch if available (Runnable-style retrievers); otherwise fallback to per-query invoke
+    if hasattr(retriever, "batch"):
+        docs_per_query = retriever.batch(queries)  # type: ignore[attr-defined]
+        for docs in docs_per_query:
+            contents_per_query.append([d.page_content for d in docs])
+    else:
+        for q in queries:
+            docs = retriever.invoke(q)
+            contents_per_query.append([d.page_content for d in docs])
+
+    return contents_per_query
+
+
+def generate_reports_batch(
+    items: List[Dict[str, Any]],
+    llm_model: str = LLM_MODEL_DEFAULT,
+) -> List[str]:
+    """
+    Perform a single LLM call to generate reports for multiple items.
+    Each item must contain:
+      - id: int
+      - peptide_code: str
+      - target_structural_assembly: str
+      - contexts: str  (joined relevant contexts)
+    Returns a list of report strings ordered by item id ascending.
+    """
+    llm = create_llm(model=llm_model)
+
+    prompt = ChatPromptTemplate.from_template(
+        """
+You are an expert peptide synthesis assistant.
+You will be given a JSON array named "items". Each element has:
+- id
+- peptide_code
+- target_structural_assembly
+- contexts  (retrieved relevant scientific context as text)
+
+For each element, generate a "report" string recommending optimal experimental
+conditions to achieve the target structural assembly, including:
+- pH
+- Concentration (log M)
+- Temperature (C)
+- Solvent
+- Estimated Time (minutes)
+
+Use this schema as a guide: {schema}
+
+Return ONLY a valid JSON array of objects with:
+[
+  {"id": <int>, "report": "<string>"},
+  ...
+]
+
+Do not include any explanations outside the JSON.
+Items:
+{items_json}
+        """
+    )
+
+    chain = prompt | llm | StrOutputParser()
+    schema_str = str(peptide_output_schema.schema)
+    items_json = json.dumps(items, ensure_ascii=False)
+
+    output = chain.invoke({"schema": schema_str, "items_json": items_json})
+
+    # Parse JSON array robustly
+    def _extract_json_array(text: str) -> Any:
+        # Try direct parse first
+        try:
+            return json.loads(text)
+        except Exception:
+            # Fallback: find first [ ... ] JSON array span
+            import re as _re
+
+            m = _re.search(r"\[\s*{.*}\s*\]", text, flags=_re.DOTALL)
+            if not m:
+                raise
+            return json.loads(m.group(0))
+
+    data = _extract_json_array(output)
+    # Map by id to keep stable order
+    by_id: Dict[int, str] = {}
+    for obj in data:
+        if isinstance(obj, dict) and "id" in obj and "report" in obj:
+            try:
+                by_id[int(obj["id"])] = str(obj["report"])
+            except Exception:
+                continue
+
+    # Return reports sorted by id (0..N-1)
+    reports: List[str] = [by_id[i] for i in sorted(by_id.keys())]
+    return reports
+
+
 # Build the graph
 workflow = StateGraph(AgentState)
 workflow.add_node("retrieve", retrieve_docs)
@@ -222,3 +329,40 @@ def run_agent(
     }
     result = app.invoke(initial_state)
     return result["report"]
+
+
+def run_agent_batch(
+    requests: List[Dict[str, str]],
+    top_k: int = TOP_K_DEFAULT,
+    llm_model: str = LLM_MODEL_DEFAULT,
+    refresh_index: bool = False,
+) -> List[str]:
+    """
+    Batch version that reduces LLM calls by packing multiple items in one prompt.
+    Each request dict must include:
+      - peptide_code
+      - target_structural_assembly
+    Returns a list of 'report' strings in the same order as input.
+    """
+    # Retrieve contexts in batch (single vectorstore load)
+    contexts_lists = retrieve_docs_batch(requests, top_k=top_k, refresh_index=refresh_index)
+
+    # Build batched items payload for a single LLM call
+    items_for_llm: List[Dict[str, Any]] = []
+    for idx, (req, ctxs) in enumerate(zip(requests, contexts_lists)):
+        items_for_llm.append(
+            {
+                "id": idx,
+                "peptide_code": req["peptide_code"],
+                "target_structural_assembly": req["target_structural_assembly"],
+                "contexts": "\n\n".join(ctxs),
+            }
+        )
+
+    # Single LLM call with JSON output containing one report per item
+    reports = generate_reports_batch(items_for_llm, llm_model=llm_model)
+
+    # Ensure output aligns with input length; pad with empty strings if needed
+    if len(reports) < len(requests):
+        reports += [""] * (len(requests) - len(reports))
+    return reports
