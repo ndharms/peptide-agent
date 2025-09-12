@@ -24,11 +24,11 @@ Notably there are **relevant papers**, **output schema definition**, and **conte
 
 ## Relevant Papers
 
-See `data/relevant_papers` for the relevant papers.
+See the relevant papers in the [Google Drive](https://drive.google.com/drive/folders/1hxbUypFwKX8hw0zyheED-8-lqDccbre0?usp=share_link).
 
-We have collected a set of important papers (i.e., published journal articles) in `data/relevant_papers`.
+We have collected a set of important papers (i.e., published journal articles) in the Google Drive.
 These papers broadly describe self-assembly of peptides.
-Every directory in `data/relevant_papers` is a paper with a PDF and metadata file.
+Every directory in the Google Drive is a paper with a PDF and metadata file.
 The metadata file provides the DOI and defines the paper as a "REVIEW" or "RESEARCH" article.
 The PDF is the article itself.
 
@@ -68,7 +68,7 @@ Use the format defined by this schema when returning a set of ideal experimental
 
 ## Steps
 1. Develop a broad understanding of peptide self-assembly
-  1.1. Understand the relevant papers in `data/relevant_papers`. Iterate over each subdirectory of `data/relevant_papers` -- read the `pdf` and reference the `json` file for each paper. 
+  1.1. Understand the relevant papers in the Google Drive. Iterate over each subdirectory of Google Drive -- read the `pdf` and reference the `json` file for each paper. 
   1.2. Answer questions like...
     1.1.1. What is a peptide?
     1.1.2. What is self-assembly of a peptide?
