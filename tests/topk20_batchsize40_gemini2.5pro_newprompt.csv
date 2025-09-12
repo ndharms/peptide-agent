@@ -1,0 +1,991 @@
+row_index,peptide_code,morphology,gt_PH,gt_CONCENTRATION_mgml,gt_CONC_LOG,gt_CONC_BUCKET,gt_TEMPERATURE_C,gt_SOLVENT_raw,gt_SOLVENT_norm,gt_TIME_MIN,pred_PH,pred_CONCENTRATION_LOG_MGML,pred_TEMPERATURE_C,pred_SOLVENT,pred_TIME_MINUTES,score_PH,score_CONC,score_TEMP,score_SOLV,score_TIME,score_TOTAL,report
+0,FEFEPKFKF,fiber,3.5,32.025,1.505489138416724,"(1,2]",,water,water,,"(3,5]","(1,2]","(20,25]",Water,"(0,30]",1,1,1,1,1,5,"PH: (3,5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+1,FF,fiber,6.7,15.0,1.1760912590556813,"(1,2]",25.0,H2O,water,720.0,"(6.5,7.5]","(1,2]","(20,25]",Water,"(240, 2880]",1,1,1,1,1,5,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+2,FEFEFKFK,fiber,6.5,7.847,0.89470365260923,"(0,1]",90.0,water,water,,"(6.5,7.5]","(0,1]","(37,90]",Water,"(0,30]",0,1,1,1,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (37,90]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+3,FEFKFEFK,fiber,6.5,7.847,0.89470365260923,"(0,1]",90.0,water,water,,"(6.5,7.5]","(0,1]","(37,90]",Water,"(0,30]",0,1,1,1,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (37,90]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+4,KFG,sphere,7.4,5.0,0.6989700043360189,"(0,1]",80.0,H2O,water,,"(6.5,7.5]","(-1,0]","(20,25]",Water,"(240, 2880]",1,0,0,1,1,3,"PH: (6.5,7.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+5,FFD,fiber,5.0,5.49,0.7395723444500919,"(0,1]",25.0,H2O,water,,"(5,6.5]","(0,1]","(20,25]",Water,"(240, 2880]",0,1,1,1,1,4,"PH: (5,6.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+6,FF,fiber,7.0,1.98,0.2966651902615311,"(0,1]",68.0,H2O,water,,"(6.5,7.5]","(1,2]","(20,25]",Water,"(240, 2880]",1,0,0,1,1,3,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+7,XFF,fiber,7.46,9.57,0.9809119377768436,"(0,1]",67.5,PB,pbs,10.0,"(6.5,7.5]","(0,1]","(37,90]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (37,90]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+8,FWD,fiber,6.0,0.745,-0.12784372725170717,"(-1,0]",25.0,H2O,water,1440.0,"(5,6.5]","(-1,0]","(20,25]",Water,"(240, 2880]",1,1,1,1,1,5,"PH: (5,6.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+9,lFF,fiber,7.3,4.26,0.6294095991027189,"(0,1]",25.0,PBS,pbs,,"(6.5,7.5]","(0,1]","(37,90]",Water,"(0,30]",1,1,0,0,1,3,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (37,90]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+10,FF,none,7.0,1.422,0.15289959639374748,"(0,1]",64.0,H2O,water,,"(6.5,7.5]","(1,2]","(20,25]",Dimethylformamide,"(240, 2880]",1,0,0,0,1,2,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Dimethylformamide (DMF)
+Estimated Time (minutes): (240, 2880]"
+11,FF,none,7.0,1.264,0.10174707394636621,"(0,1]",64.0,H2O,water,,"(6.5,7.5]","(1,2]","(20,25]",Dimethylformamide,"(240, 2880]",1,0,0,0,1,2,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Dimethylformamide (DMF)
+Estimated Time (minutes): (240, 2880]"
+12,KFG,sphere,7.4,0.5,-0.3010299956639812,"(-1,0]",60.0,H2O,water,,"(6.5,7.5]","(-1,0]","(20,25]",Water,"(240, 2880]",1,1,0,1,1,4,"PH: (6.5,7.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+13,KFG,sphere,7.4,0.5,-0.3010299956639812,"(-1,0]",25.0,H2O,water,1440.0,"(6.5,7.5]","(-1,0]","(20,25]",Water,"(240, 2880]",1,1,1,1,1,5,"PH: (6.5,7.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+14,XFF,fiber,7.46,6.82,0.8337843746564789,"(0,1]",56.0,PB,pbs,10.0,"(6.5,7.5]","(0,1]","(37,90]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (37,90]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+15,FID,fiber,7.0,7.87,0.8959747323590646,"(0,1]",25.0,H2O,water,1440.0,"(6.5,7.5]","(0,1]","(20,25]",Water,"(240, 2880]",1,1,1,1,1,5,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+16,FVD,fiber,7.0,7.59,0.8802417758954804,"(0,1]",25.0,H2O,water,1440.0,"(6.5,7.5]","(0,1]","(20,25]",Water,"(240, 2880]",1,1,1,1,1,5,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+17,FF,none,7.0,1.125,0.05115252244738129,"(0,1]",56.0,H2O,water,,"(6.5,7.5]","(1,2]","(20,25]",Dimethylformamide,"(240, 2880]",1,0,0,0,1,2,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Dimethylformamide (DMF)
+Estimated Time (minutes): (240, 2880]"
+18,FF,fiber,7.0,1.344,0.12839926871780646,"(0,1]",52.0,H2O,water,,"(6.5,7.5]","(1,2]","(20,25]",Water,"(240, 2880]",1,0,0,1,1,3,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+19,VL,fiber,5.3,1.44,0.15836249209524964,"(0,1]",25.0,TFE/H2O,tfe/h2o,30.0,"(7.5,9]","(0,1]","(20,25]",Water,"(0,30]",0,1,1,0,1,3,"PH: (7.5,9]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+20,XFF,none,7.46,4.8,0.6812412373755872,"(0,1]",51.0,PB,pbs,10.0,"(6.5,7.5]","(0,1]","(37,90]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (37,90]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+21,VL,fiber,6.0,0.72,-0.14266750356873156,"(-1,0]",25.0,TFE/H2O,tfe/h2o,30.0,"(7.5,9]","(0,1]","(20,25]",Water,"(0,30]",0,0,1,0,1,2,"PH: (7.5,9]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+22,LV,fiber,7.0,2.88,0.45939248775923086,"(0,1]",25.0,Methanol,methanol,30.0,"(5,6.5]","(-1,0]","(20,25]",Water,"(0,30]",0,0,1,0,1,2,"PH: (5,6.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+23,XFF,none,7.46,4.86,0.6866362692622934,"(0,1]",50.0,PB,pbs,10.0,"(6.5,7.5]","(0,1]","(37,90]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (37,90]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+24,LV,fiber,3.8,1.44,0.15836249209524964,"(0,1]",25.0,H2O,water,30.0,"(5,6.5]","(-1,0]","(20,25]",Water,"(0,30]",0,0,1,1,1,3,"PH: (5,6.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+25,VV,fiber,5.3,1.4,0.146128035678238,"(0,1]",25.0,H2O,water,30.0,"(5,6.5]","(-1,0]","(20,25]",Water,"(0,30]",1,0,1,1,1,4,"PH: (5,6.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+26,XFF,fiber,7.46,4.84,0.6848453616444125,"(0,1]",46.0,PB,pbs,10.0,"(6.5,7.5]","(0,1]","(37,90]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (37,90]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+27,HFF,fiber,7.0,20.0,1.3010299956639813,"(1,2]",25.0,PB,pbs,,"(6.5,7.5]","(0,1]","(37,90]",Water,"(0,30]",1,0,0,0,1,2,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (37,90]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+28,VV,fiber,4.5,0.7,-0.1549019599857432,"(-1,0]",25.0,H2O,water,30.0,"(5,6.5]","(-1,0]","(20,25]",Water,"(0,30]",0,1,1,1,1,4,"PH: (5,6.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+29,XFF,none,7.46,3.52,0.5465426634781311,"(0,1]",46.0,PB,pbs,10.0,"(6.5,7.5]","(0,1]","(37,90]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (37,90]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+30,XFF,fiber,7.46,4.51,0.6541765418779605,"(0,1]",44.0,PB,pbs,10.0,"(6.5,7.5]","(0,1]","(37,90]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (37,90]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+31,FFD,sphere,7.2,30.68,1.4868553552769432,"(1,2]",25.0,PBS,pbs,0.5,"(6.5,7.5]","(1,2]","(20,25]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+32,XFF,none,7.46,3.28,0.5158738437116791,"(0,1]",44.0,PB,pbs,10.0,"(6.5,7.5]","(0,1]","(37,90]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (37,90]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+33,FFF,sphere,7.2,32.38,1.5102768444173549,"(1,2]",25.0,Ehylacetate,ehylacetate,0.5,"(6.5,7.5]","(1,2]","(20,25]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+34,FF,fiber,7.0,1.104,0.04296907339318013,"(0,1]",44.0,H2O,water,,"(6.5,7.5]","(1,2]","(20,25]",Water,"(240, 2880]",1,0,0,1,1,3,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+35,FFD,fiber,5.0,12.82,1.1078880251827987,"(1,2]",25.0,PBS,pbs,,"(5,6.5]","(0,1]","(20,25]",Water,"(240, 2880]",0,0,1,0,1,2,"PH: (5,6.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+36,IHVHLQI,fiber,8.0,0.088,-1.0555173278498313,"(-3,-1]",25.0,TRIS,tris,1440.0,"(7.5,9]","(-3,-1]","(20,25]",Water,"(0,30]",1,1,1,0,0,3,"PH: (7.5,9]
+Concentration (log M): (-3,-1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+37,FF,fiber,7.0,1.056,0.023663918197793475,"(0,1]",42.5,H2O,water,,"(6.5,7.5]","(1,2]","(20,25]",Water,"(240, 2880]",1,0,0,1,1,3,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+38,FF,none,7.0,0.704,-0.1524273408578878,"(-1,0]",42.5,H2O,water,,"(6.5,7.5]","(1,2]","(20,25]",Dimethylformamide,"(240, 2880]",1,0,0,0,1,2,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Dimethylformamide (DMF)
+Estimated Time (minutes): (240, 2880]"
+39,KFG,sphere,7.4,0.5,-0.3010299956639812,"(-1,0]",40.0,H2O,water,,"(6.5,7.5]","(-1,0]","(20,25]",Water,"(240, 2880]",1,1,0,1,1,4,"PH: (6.5,7.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+40,IHIHIQI,fiber,8.0,0.088,-1.0555173278498313,"(-3,-1]",25.0,TRIS,tris,,"(7.5,9]","(-3,-1]","(20,25]",Water,"(0,30]",1,1,1,0,1,4,"PH: (7.5,9]
+Concentration (log M): (-3,-1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+41,VHVHVRV,fiber,8.0,0.088,-1.0555173278498313,"(-3,-1]",25.0,TRIS,tris,,"(6.5,7.5]","(-1,0]","(20,25]",Water,"(0,30]",0,0,1,0,1,2,"PH: (6.5,7.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+42,LHLHLKL,fiber,8.0,0.088,-1.0555173278498313,"(-3,-1]",25.0,TRIS,tris,,"(7.5,9]","(-3,-1]","(20,25]",Water,"(0,30]",1,1,1,0,1,4,"PH: (7.5,9]
+Concentration (log M): (-3,-1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+43,IHIHIQI,fiber,8.0,0.088,-1.0555173278498313,"(-3,-1]",25.0,TRIS,tris,,"(7.5,9]","(-3,-1]","(20,25]",Water,"(0,30]",1,1,1,0,1,4,"PH: (7.5,9]
+Concentration (log M): (-3,-1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+44,LG,sphere,6.96,11.29,1.052693941924968,"(1,2]",37.0,H2O,water,2160.0,"(6.5,7.5]","(1,2]","(25,37]",Water,"(240, 2880]",1,1,1,1,1,5,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (25,37]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+45,APLEPEYPGDNATPEQMHQHQLRRYINML,none,7.0,0.06,-1.2218487496163564,"(-3,-1]",25.0,PBS,pbs,1440.0,"(6.5,7.5]","(-3,-1]","(20,25]",Water,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (-3,-1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+46,XFF,none,7.46,2.32,0.3654879848908996,"(0,1]",32.5,PB,pbs,10.0,"(6.5,7.5]","(0,1]","(37,90]",Water,"(0,30]",1,1,0,0,1,3,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (37,90]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+47,FF,fiber,7.0,0.84,-0.07572071393811836,"(-1,0]",32.0,H2O,water,,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,0,1,1,2,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+48,FF,none,7.0,0.63,-0.2006594505464183,"(-1,0]",32.0,H2O,water,,"(6.5,7.5]","(1,2]","(20,25]",Dimethylformamide,"(240, 2880]",1,0,0,0,1,2,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Dimethylformamide (DMF)
+Estimated Time (minutes): (240, 2880]"
+49,FF,none,7.0,0.56,-0.25181197299379954,"(-1,0]",32.0,H2O,water,,"(6.5,7.5]","(1,2]","(20,25]",Dimethylformamide,"(240, 2880]",1,0,0,0,1,2,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Dimethylformamide (DMF)
+Estimated Time (minutes): (240, 2880]"
+50,KFG,sphere,7.4,0.5,-0.3010299956639812,"(-1,0]",30.0,H2O,water,,"(6.5,7.5]","(-1,0]","(20,25]",Water,"(240, 2880]",1,1,0,1,1,4,"PH: (6.5,7.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+51,YVHVSVHV,fiber,7.3,0.147,-0.8326826652518239,"(-1,0]",25.0,Hepes,hepes,,"(6.5,7.5]","(-1,0]","(20,25]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+52,HGH,fiber,7.3,0.147,-0.8326826652518239,"(-1,0]",25.0,Hepes,hepes,,"(7.5,9]","(-3,-1]","(20,25]",Water,"(240, 2880]",0,0,1,0,1,2,"PH: (7.5,9]
+Concentration (log M): (-3,-1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+53,KFG,fiber,7.4,5.0,0.6989700043360189,"(0,1]",30.0,H2O,water,,"(6.5,7.5]","(0,1]","(0,20]",Water,"(240, 2880]",1,1,0,1,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (0,20]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+54,FF,none,7.0,0.585,-0.23284413391781958,"(-1,0]",28.0,H2O,water,,"(6.5,7.5]","(1,2]","(20,25]",Dimethylformamide,"(240, 2880]",1,0,0,0,1,2,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Dimethylformamide (DMF)
+Estimated Time (minutes): (240, 2880]"
+55,FF,none,7.0,0.52,-0.28399665636520083,"(-1,0]",28.0,H2O,water,,"(6.5,7.5]","(1,2]","(20,25]",Dimethylformamide,"(240, 2880]",1,0,0,0,1,2,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Dimethylformamide (DMF)
+Estimated Time (minutes): (240, 2880]"
+56,YVHVAVHV,fiber,7.3,0.147,-0.8326826652518239,"(-1,0]",25.0,Hepes,hepes,,"(6.5,7.5]","(-1,0]","(20,25]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+57,YVSVSVDV,fiber,7.3,0.147,-0.8326826652518239,"(-1,0]",25.0,Hepes,hepes,,"(6.5,7.5]","(-1,0]","(20,25]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+58,PY,fiber,7.0,120.0,2.0791812460476247,"(2,3]",25.0,H2O,water,25.0,"(6.5,7.5]","(1,2]","(20,25]",Water,"(240, 2880]",1,0,1,1,0,3,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+59,PY,none,7.0,90.0,1.954242509439325,"(1,2]",25.0,H2O,water,25.0,"(6.5,7.5]","(1,2]","(20,25]",Water,"(0,30]",1,1,1,1,1,5,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+60,YVDVHVSV,fiber,7.3,0.147,-0.8326826652518239,"(-1,0]",25.0,Hepes,hepes,,"(6.5,7.5]","(-1,0]","(20,25]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+61,WP,fiber,7.0,84.0,1.9242792860618816,"(1,2]",25.0,H2O,water,25.0,"(5,6.5]","(0,1]","(20,25]",Water,"(240, 2880]",0,0,1,1,0,2,"PH: (5,6.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+62,WP,none,7.0,63.0,1.7993405494535817,"(1,2]",25.0,H2O,water,25.0,"(6.5,7.5]","(-3,-1]","(20,25]",Water,"(0,30]",1,0,1,1,1,4,"PH: (6.5,7.5]
+Concentration (log M): (-3,-1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+63,PW,fiber,7.0,36.0,1.5563025007672873,"(1,2]",25.0,H2O,water,25.0,"(5,6.5]","(0,1]","(20,25]",Water,"(240, 2880]",0,0,1,1,0,2,"PH: (5,6.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+64,PW,none,7.0,27.0,1.4313637641589874,"(1,2]",25.0,H2O,water,25.0,"(6.5,7.5]","(-3,-1]","(20,25]",Water,"(0,30]",1,0,1,1,1,4,"PH: (6.5,7.5]
+Concentration (log M): (-3,-1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+65,PW,none,7.0,24.0,1.380211241711606,"(1,2]",25.0,H2O,water,25.0,"(6.5,7.5]","(-3,-1]","(20,25]",Water,"(0,30]",1,0,1,1,1,4,"PH: (6.5,7.5]
+Concentration (log M): (-3,-1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+66,YVDVDVHV,fiber,7.3,0.147,-0.8326826652518239,"(-1,0]",25.0,Hepes,hepes,,"(6.5,7.5]","(-1,0]","(20,25]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+67,YVHVDVDV,fiber,7.3,0.147,-0.8326826652518239,"(-1,0]",25.0,Hepes,hepes,,"(6.5,7.5]","(-1,0]","(20,25]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+68,YVAVHVDV,fiber,7.3,0.147,-0.8326826652518239,"(-1,0]",25.0,Hepes,hepes,,"(6.5,7.5]","(-1,0]","(20,25]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+69,VF,none,5.8,0.2,-0.6989700043360187,"(-1,0]",25.0,H2O,water,,"(5,6.5]","(-1,0]","(20,25]",Water,"(240, 2880]",1,1,1,1,1,5,"PH: (5,6.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+70,FF,fiber,7.2,10.0,1.0,"(0,1]",25.0,H2O,water,,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,1,1,3,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+71,VFF,none,7.4,6.7,0.8260748027008264,"(0,1]",25.0,PB,pbs,1440.0,"(6.5,7.5]","(0,1]","(20,25]",Water,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+72,FFV,none,7.4,6.7,0.8260748027008264,"(0,1]",25.0,PB,pbs,1440.0,"(6.5,7.5]","(0,1]","(20,25]",Water,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+73,VGG,none,7.0,100.0,2.0,"(1,2]",20.0,Chlorobenzene,chlorobenzene,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+74,FWK,fiber,10.4,7.0,0.8450980400142568,"(0,1]",25.0,H2O,water,1440.0,"(6.5,7.5]","(0,1]","(20,25]",Water,"(240, 2880]",0,1,1,1,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+75,VGG,none,7.0,100.0,2.0,"(1,2]",20.0,Chloroform,chloroform,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+76,VGG,none,7.0,100.0,2.0,"(1,2]",20.0,Ethanol,ethanol,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+77,fFD,fiber,7.0,10.0,1.0,"(0,1]",25.0,Methanol,methanol,,"(6.5,7.5]","(0,1]","(20,25]",Acetonitrile,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Acetonitrile (ACN)
+Estimated Time (minutes): (240, 2880]"
+78,LII,sphere,7.0,5.0,0.6989700043360189,"(0,1]",25.0,Methanol,methanol,30.0,"(6.5,7.5]","(0,1]","(20,25]",Acetonitrile,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Acetonitrile (ACN)
+Estimated Time (minutes): (0,30]"
+79,GAG,none,7.0,100.0,2.0,"(1,2]",20.0,Ethyl acetate,ethyl acetate,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+80,GAG,none,7.0,100.0,2.0,"(1,2]",20.0,Chloroform,chloroform,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+81,LFF,sphere,7.4,10.0,1.0,"(0,1]",25.0,PBS,pbs,5.0,"(6.5,7.5]","(0,1]","(20,25]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+82,FFA,fiber,7.0,15.6,1.1931245983544616,"(1,2]",25.0,H2O,water,2.0,"(6.5,7.5]","(1,2]","(20,25]",Water,"(0,30]",1,1,1,1,1,5,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+83,LLE,aggregate,7.0,33.0,1.5185139398778875,"(1,2]",25.0,H2O,water,20160.0,"(6.5,7.5]","(1,2]","(20,25]",Water,"(240, 2880]",1,1,1,1,0,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+84,KYF,fiber,7.0,13.7,1.1367205671564067,"(1,2]",25.0,H2O,water,1440.0,"(6.5,7.5]","(1,2]","(20,25]",Water,"(240, 2880]",1,1,1,1,1,5,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+85,WWW,sphere,7.0,2.22,0.3463529744506387,"(0,1]",25.0,Chloroform,chloroform,,"(7.5,9]","(0,1]","(20,25]",Water,"(0,30]",0,1,1,0,1,3,"PH: (7.5,9]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+86,VVG,fiber,7.0,100.0,2.0,"(1,2]",20.0,Acetone,acetone,1440.0,"(6.5,7.5]","(-1,0]","(20,25]",Water,"(0,30]",1,0,0,0,0,1,"PH: (6.5,7.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+87,IVD,sphere,7.0,2.0,0.3010299956639812,"(0,1]",25.0,H2O,water,,"(6.5,7.5]","(0,1]","(20,25]",Water,"(0,30]",1,1,1,1,1,5,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+88,WWW,sphere,8.0,1.46,0.1643528557844371,"(0,1]",25.0,H2O,water,,"(7.5,9]","(0,1]","(20,25]",Water,"(0,30]",1,1,1,1,1,5,"PH: (7.5,9]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+89,VVG,none,7.0,100.0,2.0,"(1,2]",20.0,Dichloromethane,dichloromethane,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,1,1,5,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+90,VVG,none,7.0,100.0,2.0,"(1,2]",20.0,Chloroform,chloroform,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+91,IVD,fiber,7.0,4.14,0.617000341120899,"(0,1]",25.0,H2O,water,,"(6.5,7.5]","(1,2]","(20,25]",Water,"(0,30]",1,0,1,1,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+92,GGA,none,7.0,100.0,2.0,"(1,2]",20.0,Chloroform,chloroform,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+93,FFG,fiber,7.4,3.3,0.5185139398778874,"(0,1]",25.0,PBS,pbs,3.0,"(5,6.5]","(0,1]","(20,25]",Water,"(240, 2880]",0,1,1,0,0,2,"PH: (5,6.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+94,FFA,fiber,7.4,5.5,0.7403626894942439,"(0,1]",25.0,PBS,pbs,3.0,"(6.5,7.5]","(1,2]","(20,25]",Water,"(0,30]",1,0,1,0,1,3,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+95,FFA,none,7.4,4.5,0.6532125137753437,"(0,1]",25.0,PBS,pbs,3.0,"(6.5,7.5]","(1,2]","(20,25]",Dimethylformamide,"(240, 2880]",1,0,1,0,0,2,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Dimethylformamide (DMF)
+Estimated Time (minutes): (240, 2880]"
+96,AGA,none,7.0,100.0,2.0,"(1,2]",20.0,Chloroform,chloroform,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+97,FFS,none,7.4,0.64,-0.1938200260161128,"(-1,0]",25.0,PBS,pbs,3.0,"(6.5,7.5]","(1,2]","(20,25]",Dimethylformamide,"(240, 2880]",1,0,1,0,0,2,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Dimethylformamide (DMF)
+Estimated Time (minutes): (240, 2880]"
+98,FFK,fiber,7.4,2.4,0.38021124171160603,"(0,1]",25.0,PBS,pbs,3.0,"(6.5,7.5]","(0,1]","(20,25]",Water,"(0,30]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+99,FFK,none,7.4,1.8,0.25527250510330607,"(0,1]",25.0,PBS,pbs,3.0,"(6.5,7.5]","(0,1]","(20,25]",Dimethylformamide,"(240, 2880]",1,1,1,0,0,3,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Dimethylformamide (DMF)
+Estimated Time (minutes): (240, 2880]"
+100,VGA,none,7.0,100.0,2.0,"(1,2]",20.0,Ethyl acetate,ethyl acetate,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+101,GAA,fiber,7.0,100.0,2.0,"(1,2]",20.0,Toluene,toluene,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Diethyl ether,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Diethyl ether
+Estimated Time (minutes): (240, 2880]"
+102,FF,fiber,10.0,0.26,-0.585026652029182,"(-1,0]",25.0,H2O,water,,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,1,1,3,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+103,GAA,none,7.0,100.0,2.0,"(1,2]",20.0,Ethyl acetate,ethyl acetate,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+104,FF,fiber,10.7,4.29,0.6324572921847242,"(0,1]",25.0,H2O,water,,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,1,1,3,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+105,AAA,none,7.0,100.0,2.0,"(1,2]",20.0,Ethyl acetate,ethyl acetate,1440.0,"(1,3]","(0,1]","(20,25]",Trifluoroacetic acid,"(0,30]",0,0,0,0,0,0,"PH: (1,3]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Trifluoroacetic acid (TFA)
+Estimated Time (minutes): (0,30]"
+106,AAA,none,7.0,100.0,2.0,"(1,2]",20.0,Methanol,methanol,1440.0,"(1,3]","(0,1]","(20,25]",Trifluoroacetic acid,"(0,30]",0,0,0,0,0,0,"PH: (1,3]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Trifluoroacetic acid (TFA)
+Estimated Time (minutes): (0,30]"
+107,FF,fiber,10.9,52.0,1.7160033436347992,"(1,2]",25.0,H2O,water,,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,1,1,1,1,4,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+108,VAA,none,7.0,100.0,2.0,"(1,2]",20.0,Acetone,acetone,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+109,FF,fiber,6.0,5.0,0.6989700043360189,"(0,1]",25.0,H2O,water,1440.0,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,1,1,3,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+110,VAA,none,7.0,100.0,2.0,"(1,2]",20.0,Methanol,methanol,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+111,GVA,none,7.0,100.0,2.0,"(1,2]",20.0,Ethyl acetate,ethyl acetate,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+112,GVA,none,7.0,100.0,2.0,"(1,2]",20.0,Methanol,methanol,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+113,AVA,none,7.0,100.0,2.0,"(1,2]",20.0,Ethyl acetate,ethyl acetate,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+114,FF,fiber,6.6,5.0,0.6989700043360189,"(0,1]",25.0,H2O,water,1440.0,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,1,1,3,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+115,FF,fiber,7.0,20.0,1.3010299956639813,"(1,2]",25.0,H2O,water,1440.0,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,1,1,1,1,4,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+116,FF,fiber,7.0,10.0,1.0,"(0,1]",25.0,H2O,water,1440.0,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,1,1,3,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+117,GGV,none,7.0,100.0,2.0,"(1,2]",20.0,Ethyl acetate,ethyl acetate,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+118,AA,fiber,3.4,5.0,0.6989700043360189,"(0,1]",25.0,H2O,water,1440.0,"(6.5,7.5]","(0,1]","(20,25]",Water,"(0,30]",0,1,1,1,0,3,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+119,AA,fiber,3.2,5.0,0.6989700043360189,"(0,1]",25.0,H2O,water,1440.0,"(6.5,7.5]","(0,1]","(20,25]",Water,"(0,30]",0,1,1,1,0,3,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+120,AGV,none,7.0,100.0,2.0,"(1,2]",20.0,Chlorobenzene,chlorobenzene,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+121,AGV,none,7.0,100.0,2.0,"(1,2]",20.0,Ethyl acetate,ethyl acetate,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+122,FF,fiber,3.0,5.0,0.6989700043360189,"(0,1]",25.0,H2O,water,,"(6.5,7.5]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,1,1,3,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+123,FF,fiber,10.2,5.0,0.6989700043360189,"(0,1]",25.0,H2O,water,,"(6.5,7.5]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,1,1,3,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+124,FP,none,3.0,5.0,0.6989700043360189,"(0,1]",25.0,H2O,water,,"(7.5,9]","(0,1]","(20,25]",Water,"(0,30]",0,1,1,1,1,4,"PH: (7.5,9]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+125,FP,none,8.4,5.0,0.6989700043360189,"(0,1]",25.0,H2O,water,,"(7.5,9]","(0,1]","(20,25]",Water,"(0,30]",1,1,1,1,1,5,"PH: (7.5,9]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+126,VGV,none,7.0,100.0,2.0,"(1,2]",20.0,Acetonitrile,acetonitrile,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+127,AV,fiber,3.6,5.0,0.6989700043360189,"(0,1]",25.0,H2O,water,1440.0,"(3,5]","(0,1]","(20,25]",Water,"(240, 2880]",1,1,1,1,1,5,"PH: (3,5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+128,AV,fiber,5.0,5.0,0.6989700043360189,"(0,1]",25.0,H2O,water,1440.0,"(3,5]","(0,1]","(20,25]",Water,"(240, 2880]",1,1,1,1,1,5,"PH: (3,5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+129,GAV,none,7.0,100.0,2.0,"(1,2]",20.0,Dichloromethane,dichloromethane,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Acetonitrile,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Acetonitrile (ACN)
+Estimated Time (minutes): (240, 2880]"
+130,GAV,none,7.0,100.0,2.0,"(1,2]",20.0,Methanol,methanol,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Acetonitrile,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Acetonitrile (ACN)
+Estimated Time (minutes): (240, 2880]"
+131,MF,sphere,8.0,2.0,0.3010299956639812,"(0,1]",25.0,H2O,water,1440.0,"(7.5,9]","(0,1]","(20,25]",Water,"(240, 2880]",1,1,1,1,1,5,"PH: (7.5,9]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+132,AAV,none,7.0,100.0,2.0,"(1,2]",20.0,Ethyl acetate,ethyl acetate,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+133,AA,fiber,3.38,5.0,0.6989700043360189,"(0,1]",25.0,H2O,water,35.0,"(6.5,7.5]","(0,1]","(20,25]",Water,"(30,60]",0,1,1,1,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (30,60]"
+134,AAV,none,7.0,100.0,2.0,"(1,2]",20.0,Methanol,methanol,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+135,DF,fiber,10.0,12.0,1.0791812460476249,"(1,2]",25.0,H2O,water,1440.0,"(6.5,7.5]","(0,1]","(20,25]",Water,"(240, 2880]",0,0,1,1,1,3,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+136,VAV,none,7.0,100.0,2.0,"(1,2]",20.0,Dichloromethane,dichloromethane,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Acetonitrile,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Acetonitrile (ACN)
+Estimated Time (minutes): (240, 2880]"
+137,DF,none,7.0,12.0,1.0791812460476249,"(1,2]",25.0,Dichloromethane,dichloromethane,1440.0,"(6.5,7.5]","(1,2]","(20,25]",Dichloromethane,"(240, 2880]",1,1,1,1,1,5,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+138,GVV,none,7.0,100.0,2.0,"(1,2]",20.0,Toluene,toluene,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+139,DF,fiber,8.42,3.0,0.47712125471966244,"(0,1]",25.0,PB,pbs,1440.0,"(6.5,7.5]","(0,1]","(20,25]",Water,"(240, 2880]",0,1,1,0,1,3,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+140,GVV,none,7.0,100.0,2.0,"(1,2]",20.0,Dichloromethane,dichloromethane,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,1,1,5,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+141,GVV,none,7.0,100.0,2.0,"(1,2]",20.0,Methanol,methanol,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+142,DF,fiber,7.0,28.6,1.4563660331290431,"(1,2]",25.0,Toluene,toluene,1440.0,"(6.5,7.5]","(0,1]","(20,25]",Water,"(240, 2880]",1,0,1,0,1,3,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+143,KF,none,5.2,1.0,0.0,"(-1,0]",25.0,H2O,water,120.0,"(5,6.5]","(-1,0]","(20,25]",Water,"(60,120]",1,1,1,1,1,5,"PH: (5,6.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (60,120]"
+144,AVV,none,7.0,100.0,2.0,"(1,2]",20.0,Acetone,acetone,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+145,KF,aggregate,5.2,2.0,0.3010299956639812,"(0,1]",25.0,H2O,water,120.0,"(5,6.5]","(0,1]","(20,25]",Water,"(60,120]",1,1,1,1,1,5,"PH: (5,6.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (60,120]"
+146,RF,aggregate,5.2,5.0,0.6989700043360189,"(0,1]",25.0,H2O,water,120.0,"(5,6.5]","(0,1]","(20,25]",Water,"(60,120]",1,1,1,1,1,5,"PH: (5,6.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (60,120]"
+147,VVV,none,7.0,100.0,2.0,"(1,2]",20.0,Toluene,toluene,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+148,VVV,none,7.0,100.0,2.0,"(1,2]",20.0,Chloroform,chloroform,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+149,VVV,none,7.0,100.0,2.0,"(1,2]",20.0,Acetone,acetone,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+150,VVV,none,7.0,100.0,2.0,"(1,2]",20.0,Ethanol,ethanol,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+151,KF,aggregate,5.2,2.0,0.3010299956639812,"(0,1]",25.0,H2O,water,,"(5,6.5]","(0,1]","(20,25]",Water,"(60,120]",1,1,1,1,1,5,"PH: (5,6.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (60,120]"
+152,RF,aggregate,5.2,2.0,0.3010299956639812,"(0,1]",25.0,H2O,water,,"(5,6.5]","(0,1]","(20,25]",Water,"(60,120]",1,1,1,1,1,5,"PH: (5,6.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (60,120]"
+153,FG,fiber,7.0,20.0,1.3010299956639813,"(1,2]",25.0,PB,pbs,,"(6.5,7.5]","(1,2]","(20,25]",Water,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+154,SAA,none,7.0,100.0,2.0,"(1,2]",20.0,Dichloromethane,dichloromethane,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,1,1,5,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+155,FAA,none,7.0,100.0,2.0,"(1,2]",20.0,Chloroform,chloroform,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+156,FK,fiber,9.8,20.0,1.3010299956639813,"(1,2]",25.0,PB,pbs,,"(9,11]","(1,2]","(20,25]",Water,"(240, 2880]",1,1,1,0,1,4,"PH: (9,11]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+157,FAA,none,7.0,100.0,2.0,"(1,2]",20.0,Ethanol,ethanol,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+158,FAA,none,7.0,100.0,2.0,"(1,2]",20.0,Methanol,methanol,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+159,aA,fiber,7.0,2.0,0.3010299956639812,"(0,1]",25.0,H2O,water,,"(6.5,7.5]","(0,1]","(20,25]",Water,"(240, 2880]",1,1,1,1,1,5,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+160,SVG,none,7.0,100.0,2.0,"(1,2]",20.0,Acetone,acetone,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+161,SVG,none,7.0,100.0,2.0,"(1,2]",20.0,Ethanol,ethanol,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Acetonitrile,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Acetonitrile (ACN)
+Estimated Time (minutes): (240, 2880]"
+162,AA,fiber,3.1,5.0,0.6989700043360189,"(0,1]",25.0,H2O,water,,"(6.5,7.5]","(0,1]","(20,25]",Water,"(0,30]",0,1,1,1,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+163,FVG,none,7.0,100.0,2.0,"(1,2]",20.0,Methanol,methanol,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+164,QAA,none,7.0,100.0,2.0,"(1,2]",20.0,Ethanol,ethanol,1440.0,"(6.5,7.5]","(1,2]","(0,20]",Dichloromethane,"(240, 2880]",1,1,1,0,1,4,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (0,20]
+Solvent: Dichloromethane (DCM)
+Estimated Time (minutes): (240, 2880]"
+165,KFG,sphere,7.4,0.5,-0.3010299956639812,"(-1,0]",20.0,H2O,water,,"(6.5,7.5]","(-1,0]","(37,90]",Water,"(0,30]",1,1,0,1,1,4,"PH: (6.5,7.5]
+Concentration (log M): (-1,0]
+Temperature (C): (37,90]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+166,KFG,fiber,7.4,5.0,0.6989700043360189,"(0,1]",20.0,H2O,water,,"(6.5,7.5]","(0,1]","(0,20]",Water,"(0,30]",1,1,1,1,1,5,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (0,20]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+167,FFH,fiber,7.2,31.78,1.5021538928713607,"(1,2]",20.0,PBS,pbs,0.5,"(6.5,7.5]","(0,1]","(20,25]",Water,"(0,30]",1,0,0,0,1,2,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (0,30]"
+168,FF,fiber,7.0,0.66,-0.1804560644581313,"(-1,0]",16.0,H2O,water,,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,0,1,1,2,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+169,FF,fiber,7.0,0.2,-0.6989700043360187,"(-1,0]",25.0,H2O,water,60.0,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,1,0,2,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+170,FF,fiber,7.0,1.0,0.0,"(-1,0]",25.0,H2O,water,60.0,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,1,0,2,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+171,FF,fiber,7.0,6.0,0.7781512503836436,"(0,1]",25.0,H2O,water,60.0,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,1,0,2,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+172,FF,none,7.0,0.2,-0.6989700043360187,"(-1,0]",25.0,H2O,water,60.0,"(6.5,7.5]","(1,2]","(20,25]",Dimethylformamide,"(240, 2880]",1,0,1,0,0,2,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Dimethylformamide (DMF)
+Estimated Time (minutes): (240, 2880]"
+173,FF,fiber,7.0,0.6,-0.2218487496163564,"(-1,0]",8.0,H2O,water,,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,0,1,1,2,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+174,FF,none,7.0,0.5,-0.3010299956639812,"(-1,0]",25.0,H2O,water,60.0,"(6.5,7.5]","(1,2]","(20,25]",Dimethylformamide,"(240, 2880]",1,0,1,0,0,2,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Dimethylformamide (DMF)
+Estimated Time (minutes): (240, 2880]"
+175,FF,sphere,7.0,0.5,-0.3010299956639812,"(-1,0]",25.0,H2O,water,60.0,"(6.5,7.5]","(-1,0]","(20,25]",Water,"(30,60]",1,1,1,1,1,5,"PH: (6.5,7.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (30,60]"
+176,FF,none,7.0,1.0,0.0,"(-1,0]",25.0,H2O,water,60.0,"(6.5,7.5]","(1,2]","(20,25]",Dimethylformamide,"(240, 2880]",1,0,1,0,0,2,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Dimethylformamide (DMF)
+Estimated Time (minutes): (240, 2880]"
+177,FF,sphere,7.0,10.0,1.0,"(0,1]",25.0,H2O,water,60.0,"(6.5,7.5]","(-1,0]","(20,25]",Water,"(30,60]",1,0,1,1,1,4,"PH: (6.5,7.5]
+Concentration (log M): (-1,0]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (30,60]"
+178,LG,none,10.5,1.882,0.27461961909123805,"(0,1]",4.0,H2O,water,1440.0,"(9,11]","(0,1]","(0,20]",Water,"(240, 2880]",1,1,1,1,1,5,"PH: (9,11]
+Concentration (log M): (0,1]
+Temperature (C): (0,20]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+179,LG,fiber,5.08,1.882,0.27461961909123805,"(0,1]",4.0,H2O,water,1440.0,"(5,6.5]","(0,1]","(0,20]",Water,"(240, 2880]",1,1,1,1,1,5,"PH: (5,6.5]
+Concentration (log M): (0,1]
+Temperature (C): (0,20]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+180,LG,fiber,5.34,1.882,0.27461961909123805,"(0,1]",4.0,H2O,water,1440.0,"(5,6.5]","(0,1]","(0,20]",Water,"(240, 2880]",1,1,1,1,1,5,"PH: (5,6.5]
+Concentration (log M): (0,1]
+Temperature (C): (0,20]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+181,FF,none,7.0,10.0,1.0,"(0,1]",25.0,Ethanol,ethanol,60.0,"(6.5,7.5]","(1,2]","(20,25]",Dimethylformamide,"(240, 2880]",1,0,1,0,0,2,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Dimethylformamide (DMF)
+Estimated Time (minutes): (240, 2880]"
+182,EF,sphere,4.8,5.0,0.6989700043360189,"(0,1]",25.0,H2O,water,2160.0,"(6.5,7.5]","(0,1]","(20,25]",Water,"(240, 2880]",0,1,1,1,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+183,FG,fiber,10.5,2.4,0.38021124171160603,"(0,1]",4.0,H2O,water,1440.0,"(7.5,9]","(0,1]","(0,20]",Water,"(240, 2880]",0,1,1,1,1,4,"PH: (7.5,9]
+Concentration (log M): (0,1]
+Temperature (C): (0,20]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+184,EF,sphere,7.0,8.2,0.9138138523837167,"(0,1]",25.0,H2O,water,1440.0,"(6.5,7.5]","(0,1]","(20,25]",Water,"(240, 2880]",1,1,1,1,1,5,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+185,GG,fiber,4.6,3.91,0.5921767573958668,"(0,1]",4.0,H2O,water,1440.0,"(6.5,7.5]","(0,1]","(0,20]",Water,"(240, 2880]",0,1,1,1,1,4,"PH: (6.5,7.5]
+Concentration (log M): (0,1]
+Temperature (C): (0,20]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+186,GG,none,7.3,3.91,0.5921767573958668,"(0,1]",4.0,H2O,water,1440.0,"(7.5,9]","(0,1]","(0,20]",Water,"(240, 2880]",0,1,1,1,1,4,"PH: (7.5,9]
+Concentration (log M): (0,1]
+Temperature (C): (0,20]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+187,FF,fiber,7.0,0.605,-0.2182446253475311,"(-1,0]",4.0,H2O,water,,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,0,1,1,2,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+188,FF,fiber,7.0,10.0,1.0,"(0,1]",25.0,Methanol,methanol,,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,0,1,2,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+189,FF,fiber,7.0,4.0,0.6020599913279624,"(0,1]",25.0,Dichloromethane,dichloromethane,,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,0,1,2,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+190,RLVFFAH,fiber,8.0,0.26,-0.585026652029182,"(-1,0]",4.0,H2O,water,43200.0,"(7.5,9]","(-1,0]","(0,20]",Water,"(240, 2880]",1,1,1,1,0,4,"PH: (7.5,9]
+Concentration (log M): (-1,0]
+Temperature (C): (0,20]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+191,FF,fiber,3.5,1.0,0.0,"(-1,0]",25.0,H2O,water,75.0,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,1,0,2,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+192,FF,fiber,3.0,8.02,0.9041743682841635,"(0,1]",25.0,H2O,water,4320.0,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,1,0,2,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+193,FF,fiber,3.2,8.02,0.9041743682841635,"(0,1]",25.0,H2O,water,4320.0,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,1,0,2,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+194,FF,fiber,3.4,8.02,0.9041743682841635,"(0,1]",25.0,H2O,water,4320.0,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,1,0,2,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+195,FF,fiber,3.8,8.02,0.9041743682841635,"(0,1]",25.0,H2O,water,4320.0,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,0,1,1,0,2,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
+196,FF,none,10.9,15.0,1.1760912590556813,"(1,2]",25.0,H2O,water,720.0,"(6.5,7.5]","(1,2]","(20,25]",Dimethylformamide,"(240, 2880]",0,1,1,0,1,3,"PH: (6.5,7.5]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Dimethylformamide (DMF)
+Estimated Time (minutes): (240, 2880]"
+197,FF,fiber,7.0,15.0,1.1760912590556813,"(1,2]",25.0,H2O,water,720.0,"(7.5,9]","(1,2]","(20,25]",Water,"(240, 2880]",0,1,1,1,1,4,"PH: (7.5,9]
+Concentration (log M): (1,2]
+Temperature (C): (20,25]
+Solvent: Water
+Estimated Time (minutes): (240, 2880]"
