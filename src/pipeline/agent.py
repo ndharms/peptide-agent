@@ -1,13 +1,14 @@
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import CharacterTextSplitter
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langgraph.graph import StateGraph, END
 from typing import TypedDict, List
-from src.pipeline.schema import peptide_output_schema
+# from src.pipeline.schemas import peptide_output_schema
+from schemas import peptide_output_schema
 import json
 import os
 from pathlib import Path

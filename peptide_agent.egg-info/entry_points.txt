@@ -1,0 +1,2 @@
+[console_scripts]
+peptide-agent = src.pipeline.main:main

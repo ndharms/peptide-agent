@@ -1,0 +1,15 @@
+numpy
+schema
+requests
+pandas
+seaborn
+matplotlib
+typer
+rdkit
+google-generativeai
+langchain
+langgraph
+langchain-google-genai
+pypdf
+langchain-community
+faiss-cpu
