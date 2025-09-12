@@ -1,221 +1,200 @@
-PEPTIDE_CODE;N-terminal;C-terminal;Morphology ;PH;CONCENTRATION_mg ml;TEMPERATURE_C;SOLVENT;Ratio;Time (min);Reference
-RSGQQKFQFQFEQQ;Free;Amidated;fiber;7.4;0.7;25;PBS;100;1440;10.1021/nn5051344
-FF;Fmoc;Free;none;7;10.05;37;DMSO/PBS;Okt 90;;1003
-FF;Fmoc;Free;none;7;5.025;37;DMSO/PBS;20/80;;1004
-FP;Fmoc;Free;none;8.4;5;25;DMSO/H2O;20/80;;1270
-IHIHIRI;Acetylated;Amidated;fiber;8;0.088;25;TRIS;100;0;10.1038/nchem.1894
-FP;Chlorination;N-hexadecylamine;none;7;96;25;H2O;100;25;1007
-PY;Chlorination;N-hexadecylamine;none;7;90;25;H2O;100;25;1008
-LHLHLHL;Acetylated;Amidated;fiber;8;0.088;25;TRIS;100;0;10.1038/nchem.1894
-PPPPPHPPPPPGY;Acetylated;Amidated;none;7;0.71;25;HEPES;100;;10.1021/acsomega.7b00928
-IHIHIYI;Acetylated;Amidated;fiber;8;0.088;25;TRIS;100;1440;10.1016/j.jcis.2022.04.122
-AV;Napthalene;Free;fiber;5;5;25;H2O;100;1440;1273
-WF;Chlorination;N-hexadecylamine;fiber;7;4.4;25;H2O;100;25;1011
-IHIHIYI;Free;Free;fiber;8;0.088;25;TRIS;100;0;10.1039/C7NR02675G
-IHIHIYIHIHI;Free;Free;fiber;8;0.088;25;TRIS;100;0;10.1039/C7NR02675G
-FF;Free;Free;fiber;7;2;25;H2O;100;10;1274
-WF;Chlorination;N-hexadecylamine;fiber;7;4.8;25;H2O;100;25;1011
-FW;Chlorination;N-hexadecylamine;fiber;7;3;25;H2O;100;25;1012
-YVHVHVHV;Acetylated;Amidated;fiber;7.3;0.147;25;DMSO / Hepes;Apr 96;0;10.1371/journal.pone.0143948
-YVSVHVHV;Acetylated;Amidated;fiber;7.3;0.147;25;DMSO / Hepes;Apr 96;0;10.1371/journal.pone.0143948
-AA;Fmoc;Free;fiber;3.34;5;25;H2O;100;35;1296
-FF;Free;Free;fiber;5.2;2;25;HFP/H2O;Feb 98;5;1015
-AA;Fmoc;Free;fiber;3.36;5;25;H2O;100;35;1296
-AA;Fmoc;Free;fiber;3.4;5;25;H2O;100;35;1296
-DF;Free;Methoxy;none;10;9;25;H2O;100;1440;1309
-IF;Free;Free;none;5.8;0.2;25;HFP/H2O;Feb 98;;1017
-FF;Free;Free;fiber;5.2;2;90;HFP/H2O;Feb 98;5;1015
-DF;Free;Methoxy;fiber;7;18;25;Dichloromethane;100;1440;1310
-YVSVDVSV;Acetylated;Amidated;fiber;7.3;0.147;25;DMSO / Hepes;Apr 96;0;10.1371/journal.pone.0143948
-DF;Free;Methoxy;none;7;12;25;Dichloromethane;100;1440;1310
-IF;Free;Free;fiber;5.8;10;25;HFP/H2O;Feb 98;;1017
-DF;Free;Methoxy;fiber;6.8;3;25;PB;100;1440;1311
-YVDVSVHV;Acetylated;Amidated;fiber;7.3;0.147;25;DMSO / Hepes;Apr 96;0;10.1371/journal.pone.0143948
-FF;Free;Free;fiber;5.5;1;50;HFP/H2O;Jan 99;;1019
-YVSVDVHV;Acetylated;Amidated;fiber;7.3;0.147;25;DMSO / Hepes;Apr 96;0;10.1371/journal.pone.0143948
-FF;Free;Free;none;5.5;1;150;HFP/H2O;Jan 99;;1019
-DF;Free;Methoxy;fiber;9.5;3;25;PB;100;1440;1311
-YVDVDVHV;Acetylated;Amidated;fiber;7.3;0.147;25;DMSO / Hepes;Apr 96;0;10.1371/journal.pone.0143948
-FF;Boc;Free;fiber;4.9;2;25;HFP/H2O;Apr 96;;1026
-DF;Free;Methoxy;fiber;7;28.6;25;Toluene;100;1440;1318
-YVDVHVAV;Acetylated;Amidated;fiber;7.3;0.147;25;DMSO / Hepes;Apr 96;0;10.1371/journal.pone.0143948
-YVAVDVHV;Acetylated;Amidated;fiber;7.3;0.147;25;DMSO / Hepes;Apr 96;0;10.1371/journal.pone.0143948
-GGG;Boc;Benzylation;none;7;100;20;Acetonitrile;100;1440;1033
-EF;Free;Free;none;5.2;2;25;HFP/H2O;02 98;120;1322
-RF;Free;Free;aggregate;5.2;5;25;HFP/H2O;02 98;120;1323
-AGG;Boc;Benzylation;none;7;100;20;Chloroform;100;1440;1034
-YHYHYHYH;Acetylated;Amidated;fiber;8.5;0.0264;25;TRIS;100;1440;https://doi.org/10.1021/acscatal.0c03093
-AGG;Boc;Benzylation;none;7;100;20;Methanol;100;1440;1034
-VGG;Boc;Benzylation;none;7;100;20;Ethyl acetate;100;1440;1035
-FG;Free;Free;fiber;7;20;25;PB;100;;1338
-FS;Free;Free;fiber;7;20;25;PB;100;;1339
-RF;Free;Free;aggregate;5.2;2;25;HFP/H2O;02 98;;1335
-HSGVKVKVKVKVPPTKVKVKVKV;Acetylated;Amidated;fiber;9;1.04052;RT;water;100;;https://doi.org/10.1002/anie.201708036
-FE;Free;Free;fiber;6;20;25;PB;100;;1341
-RSAIEDLLFDKV;Free;Free;fiber;4.4;10.0036;;water;100;;https://pubs.acs.org/doi/10.1021/acsnano.1c10658
-GAG;Boc;Benzylation;none;7;100;20;Acetonitrile;100;1440;1035
-GAG;Boc;Benzylation;none;7;100;20;Ethanol;100;1440;1035
-aa;Free;Free;fiber;7;2;25;H2O;100;;1347
-AA;Fmoc;Free;fiber;3.1;5;25;H2O;100;;1384
-VAG;Boc;Benzylation;fiber;7;100;20;Chlorobenzene;100;1440;1036
-AA;Fmoc;Free;fiber;3.26;5;25;H2O;100;;1384
-VAG;Boc;Benzylation;none;7;100;20;Methanol;100;1440;1036
-WW;Free;Free;sphere;7.5;0.31;37;HFP/H2O;02 98;1440;1387
-GVG;Boc;Benzylation;fiber;7;100;20;Toluene;100;1440;1037
-AVG;Boc;Benzylation;fiber;7;100;20;Chlorobenzene;100;1440;1039
-FG;Free;Free;fiber;4.7;20;25;H2O;100;;1408
-WW;Free;Free;sphere;7.5;0.35;37;HFP/H2O;02 98;1440;1387
-GGA;Boc;Benzylation;none;7;100;20;Chloroform;100;1440;1045
-FF;Boc;Free;fiber;7;2;25;Ethanol/H2O;10 90;60;1417
-FF;Boc;Free;fiber;7;0.5;25;Ethanol/H2O;20/80;60;1417
-AGA;Boc;Benzylation;none;7;100;20;Methanol;100;1440;1045
-VGA;Boc;Benzylation;none;7;100;20;Chlorobenzene;100;1440;1045
-VGA;Boc;Benzylation;none;7;100;20;Ethyl acetate;100;1440;1045
-VGA;Boc;Benzylation;none;7;100;20;Chloroform;100;1440;1045
-VGA;Boc;Benzylation;none;7;100;20;Dichloromethane;100;1440;1045
-FF;Boc;Free;sphere;7;0.2;25;Ethanol/H2O;30/70;60;1417
-FF;Boc;Free;fiber;7;2;25;Ethanol/H2O;30/70;60;1417
-VGA;Boc;Benzylation;none;7;100;20;Methanol;100;1440;1045
-GAA;Boc;Benzylation;fiber;7;100;20;Toluene;100;1440;1046
-FF;Boc;Free;none;7;0.2;25;Ethanol/H2O;40/60;60;1417
-FF;Boc;Free;sphere;7;0.5;25;Ethanol/H2O;40/60;60;1417
-GAA;Boc;Benzylation;none;7;100;20;Acetonitrile;100;1440;1047
-GAA;Boc;Benzylation;none;7;100;20;Ethanol;100;1440;1047
-FF;Boc;Free;fiber;7;6;25;Ethanol/H2O;40/60;60;1417
-FF;Boc;Free;none;7;0.2;25;Ethanol/H2O;50/50;60;1417
-AAA;Boc;Benzylation;fiber;7;100;20;Acetonitrile;100;1440;1050
-AAA;Boc;Benzylation;none;7;100;20;Dichloromethane;100;1440;1050
-FF;Boc;Free;sphere;7;4;25;Ethanol/H2O;50/50;60;1417
-AAA;Boc;Benzylation;none;7;100;20;Ethanol;100;1440;1050
-AAA;Boc;Benzylation;none;7;100;20;Acetone;100;1440;1050
-FF;Boc;Free;fiber;7;10;25;Ethanol/H2O;50/50;60;1417
-FF;Boc;Free;sphere;7;10;25;Ethanol/H2O;60/40;60;1417
-FF;Boc;Free;none;7;0.5;25;Ethanol/H2O;70/30;60;1417
-FF;Boc;Free;none;7;4;25;Ethanol/H2O;70/30;60;1417
-AVA;Boc;Benzylation;none;7;100;20;Chloroform;100;1440;1052
-FF;Boc;Free;none;7;2;25;Ethanol/H2O;80/20;60;1417
-VVA;Boc;Benzylation;none;7;100;20;Chloroform;100;1440;1054
-VVA;Boc;Benzylation;none;7;100;20;Dichloromethane;100;1440;1054
-FF;Boc;Free;none;7;2;25;Ethanol/H2O;90/10;60;1417
-FF;Boc;Free;none;7;6;25;Ethanol/H2O;90/10;60;1417
-GGV;Boc;Benzylation;none;7;100;20;Acetone;100;1440;1054
-FF;Boc;Free;none;7;8;25;Ethanol/H2O;90/10;60;1417
-GGV;Boc;Benzylation;none;7;100;20;Ethanol;100;1440;1054
-GGV;Boc;Benzylation;none;7;100;20;Dichloromethane;100;1440;1054
-FF;Boc;Free;none;7;1;25;Ethanol;100;60;1417
-FF;Boc;Free;none;7;4;25;Ethanol;100;60;1417
-AGV;Boc;Benzylation;none;7;100;20;Acetonitrile;100;1440;1054
-LL;Fmoc;Free;fiber;4.8;2.443;4;H2O;100;1440;1443
-VGV;Boc;Benzylation;none;7;100;20;Toluene;100;1440;1054
-VGV;Boc;Benzylation;none;7;100;20;Acetone;100;1440;1054
-LG;Fmoc;Free;fiber;5.34;1.882;4;H2O;100;1440;1446
-AAV;Boc;Benzylation;none;7;100;20;Acetone;100;1440;1054
-EF;Free;Free;sphere;7;2.8;25;HFP/H2O;05 95;1440;1496
-AAV;Boc;Benzylation;none;7;100;20;Ethanol;100;1440;1054
-VAV;Boc;Benzylation;fiber;7;33;20;Hexane;100;1440;1055
-KF;Free;Free;sphere;7;6.4;25;HFP/H2O;05 95;1440;1497
-FF;Free;Free;fiber;7;10;25;Ethanol;100;;1501
-GVV;Boc;Benzylation;none;7;100;20;Toluene;100;1440;1055
-FF;Napthalene;Free;fiber;7;0.96;25;H2O;100;15;1510
-GVV;Boc;Benzylation;none;7;100;20;Dichloromethane;100;1440;1055
-GVV;Boc;Benzylation;none;7;100;20;Acetone;100;1440;1055
-GVV;Boc;Benzylation;none;7;100;20;Acetonitrile;100;1440;1055
-FG;Fmoc;Free;fiber;10.5;0.48;4;H2O;100;1440;1573
-FG;Fmoc;Free;fiber;9;4.8;4;H2O;100;1440;1574
-AVV;Boc;Benzylation;none;7;100;20;Ethyl acetate;100;1440;1055
-GG;Fmoc;Free;fiber;4.6;3.91;4;H2O;100;1440;1576
-VVV;Boc;Benzylation;none;7;100;20;Ethyl acetate;100;1440;1056
-FA;Napthalene;Free;sphere;11.7;5;25;H2O;100;90;1594
-VVV;Boc;Benzylation;none;7;100;20;Chloroform;100;1440;1056
-FF;Fmoc;Free;fiber;4;8.02;25;H2O;100;4320;1600
-YA;Fmoc;Free;fiber;8;5.11;25;PB;100;1440;1621
-YS;Fmoc;Free;fiber;8;5.27;25;PB;100;1440;1623
-FAA;Boc;Benzylation;none;7;100;20;Acetonitrile;100;1440;1058
-FF;Fmoc;Free;none;7;15;25;Acetone;100;720;1644
-SVG;Boc;Benzylation;none;7;100;20;Ethyl acetate;100;1440;1060
-FF;Fmoc;Free;fiber;7;15;25;Ethanol;100;720;1644
-FF;Fmoc;Free;fiber;7;15;25;Toluene;100;720;1644
-SVG;Boc;Benzylation;none;7;100;20;Ethanol;100;1440;1060
-FVG;Boc;Benzylation;none;7;100;20;Ethyl acetate;100;1440;1064
-FF;Fmoc;Free;fiber;10.8;15;25;DMSO/H2O;60/40;720;1644
-FF;Fmoc;Free;fiber;7;15;25;Acetone/H2O;40/60;720;1644
-fFV;Free;Free;fiber;7.4;6.7;25;PB;100;1440;1075
-FF;Fmoc;Free;fiber;6.6;15;25;DMF/H2O;40/60;720;1644
-KFG;Free;Free;sphere;7.4;0.5;60;H2O;100;;1078
-KFG;Free;Free;fiber;7.4;5;30;H2O;100;;1079
-KFG;Free;Free;sphere;7.4;5;60;H2O;100;;1080
-FF;Fmoc;Free;fiber;7.8;15;25;Methanol/H2O;30/70;720;1644
-FWK;Fmoc;Free;fiber;9;7;25;Acetonitrile/H2O;50/50;1440;1085
-FF;Fmoc;Free;fiber;7;15;25;Ethanol/H2O;40/60;720;1644
-FF;Fmoc;Free;fiber;7;15;25;Ethanol/H2O;30/70;720;1644
-FF;Fmoc;Free;fiber;3.7;15;25;HFP/H2O;80/20;720;1644
-fFD;Free;Free;fiber;7;10;25;Methanol;100;;1103
-LII;Boc;Methoxy;sphere;7;10;25;Methanol;100;30;1107
-YY;Free;Free;fiber;7;1.632;70;DMSO;100;5;1695
-FFA;Boc;Free;fiber;7;14.3;25;H2O;100;2;1123
-XFF;Boc;Free;fiber;7.46;3.19;32.5;PB;100;10;1124
-FFD;Fmoc;Free;none;8;5.49;25;H2O;100;;1707
-XFF;Boc;Free;none;7.46;2.32;32.5;PB;100;10;1124
-XFF;Boc;Free;none;7.46;3.69;44;PB;100;10;1124
-FFA;Acetylation;Amidation;fiber;6.12;7.7;25;H2O;100;;1843
-FFA;Acetylation;Amidation;fiber;6.12;8.4;25;H2O;100;;1843
-XFF;Boc;Free;fiber;7.46;4.84;46;PB;100;10;1124
-KFG;Free;Free;fiber;7.4;4.9;25;H2O;100;1440;1908
-XFF;Boc;Free;fiber;7.46;5.88;47.5;PB;100;10;1124
-XFF;Boc;Free;fiber;7.46;5.39;47.5;PB;100;10;1124
-XFF;Boc;Free;none;7.46;3.92;47.5;PB;100;10;1124
-XFF;Boc;Free;fiber;7.46;6.48;50;PB;100;10;1124
-XFF;Boc;Free;fiber;7.46;6.6;51;PB;100;10;1124
-VI;Boc;Methoxy;fiber;7;2.88;25;Methanol;100;30;1943
-VI;Boc;Methoxy;fiber;7.5;0.72;25;Methanol/H2O;10 90;30;1943
-XFF;Boc;Free;none;7.46;6;65;PB;100;10;1124
-XFF;Boc;Free;fiber;7.46;9.57;67.5;PB;100;10;1124
-LV;Boc;Methoxy;fiber;7.5;0.72;25;Methanol/H2O;10 90;30;1945
-LV;Boc;Methoxy;fiber;7;2.88;25;TFE;100;30;1945
-MYD;Acetylation;Free;fiber;7;10;25;H2O;100;1;1128
-LV;Boc;Methoxy;fiber;4.5;0.72;25;HFP/H2O;10 90;30;1945
-LLE;Acetylation;Free;aggregate;7;40;25;H2O;100;20160;1129
-VIE;Acetylation;Free;fiber;7;5;25;H2O;100;2880;1130
-FFH;Ferrocene;Free;sphere;7.2;31.78;25;PB/Ethyl acetate;70/30;0.5;1972
-FFH;Ferrocene;Free;sphere;7.2;31.78;25;PB/Ethyl acetate;10 90;0.5;1972
-FFH;Ferrocene;Free;sphere;7.2;31.78;40;PB/Ethyl acetate;70/30;0.5;1972
-IVD;Acetylation;Free;fiber;7;4.14;25;H2O;100;;1168
-FFD;Ferrocene;Free;sphere;7.2;30.68;25;PB/Ethyl acetate;90/10;0.5;1973
-FFA;Napthalene;Free;none;7.4;4;25;PBS;100;3;1173
-FFF;Ferrocene;Free;sphere;7.2;32.38;25;PB/Ethyl acetate;90/10;0.5;1974
-FFS;Napthalene;Free;none;7.4;0.64;25;PBS;100;3;1174
-FFK;Napthalene;Free;fiber;7.4;2.2;25;PBS;100;3;1175
-FFK;Napthalene;Free;fiber;7.4;2.4;25;PBS;100;3;1175
-FFS;Ferrocene;Free;sphere;7.2;29.27;25;PB/Ethyl acetate;50/50;0.5;1975
-FFS;Ferrocene;Free;sphere;7.2;29.27;25;PB/Ethyl acetate;90/10;0.5;1975
-RGD;Fmoc;Free;fiber;5.2;5;25;DMSO/H2O;05 95;;1178
-FF;Free;Free;fiber;7;0.605;4;H2O;100;;2018
-RGD;Fmoc;Free;fiber;5.85;5;25;DMSO/H2O;05 95;;1178
-FF;Free;Free;none;7;0.495;4;H2O;100;;2018
-FF;Free;Free;fiber;7;0.55;12;H2O;100;;2018
-FF;Fmoc;Free;none;10.7;0.78;25;DMSO/H2O;50/50;;1194
-FF;Free;Free;fiber;7;0.66;16;H2O;100;;2018
-FF;Fmoc;Free;fiber;10.7;4.29;25;DMSO/H2O;50/50;;1194
-FF;Free;Free;fiber;7;0.627;20;H2O;100;;2018
-FF;Free;Free;fiber;7;0.684;20;H2O;100;;2018
-FF;Free;Free;none;7;0.456;20;H2O;100;;2018
-FF;Fmoc;Free;fiber;10.8;29.9;25;DMSO/H2O;70/30;;1194
-FF;Free;Free;fiber;7;0.78;28;H2O;100;;2018
-FF;Free;Free;none;7;0.52;28;H2O;100;;2018
-FF;Free;Free;fiber;7;0.625;-80;H2O;100;;1217
-FF;Free;Free;none;7;0.63;32;H2O;100;;2018
-FF;Napthalene;Free;fiber;6.2;10;25;H2O;100;1440;1235
-FF;Napthalene;Free;fiber;6.2;5;25;H2O;100;1440;1235
-FF;Free;Free;fiber;7;1.056;42.5;H2O;100;;2018
-FF;Napthalene;Free;fiber;6.4;20;25;H2O;100;1440;1235
-FF;Free;Free;fiber;7;1.224;48;H2O;100;;2018
-FF;Free;Free;none;7;0.816;48;H2O;100;;2018
-FF;Free;Free;fiber;7;1.344;52;H2O;100;;2018
-FF;Free;Free;none;7;1.12;60;H2O;100;;2018
-FF;Free;Free;fiber;7;1.738;64;H2O;100;;2018
-FG;Fmoc;Free;fiber;4.8;5;25;DMSO/H2O;05 95;;1268
-IHVHLQI;Acetylated;Amidated;fiber;8;0.088;25;TRIS;100;1440;10.1016/j.jcis.2022.04.122
-PPSPPHPPPPPGY;Acetylated;Amidated;none;7;0.71;25;HEPES;100;;10.1021/acsomega.7b00928
-PPCPPHPPDPPGY;Acetylated;Amidated;none;7;0.71;25;HEPES;100;;10.1021/acsomega.7b00928
-FF;Fmoc;Free;fiber;3;5;25;DMSO/H2O;05 95;;1269
-FF;Fmoc;Free;fiber;6.6;5;25;DMSO/H2O;05 95;;1269
+PEPTIDE_CODE,N-terminal,C-terminal,Morphology,PH,CONCENTRATION_mg ml,TEMPERATURE_C,SOLVENT,Time (min),Reference
+FF,Free,Free,none,7,2.0,25,THF,10.0,1277
+MF,Free,Free,sphere,8,2.0,25,H2O,1440.0,1290
+FF,Fmoc,Free,none,7,5.025,37,PBS,,1004
+FP,Chlorination,N-hexadecylamine,none,7,108.0,25,H2O,25.0,1007
+FP,Chlorination,N-hexadecylamine,none,7,96.0,25,H2O,25.0,1007
+PY,Chlorination,N-hexadecylamine,none,7,80.0,25,H2O,25.0,1008
+DF,Free,Methoxy,fiber,7,18.0,25,Dichloromethane,1440.0,1310
+DF,Free,Methoxy,fiber,7.34,3.0,25,PB,1440.0,1311
+DF,Free,Methoxy,fiber,7.88,3.0,25,PB,1440.0,1311
+WF,Chlorination,N-hexadecylamine,fiber,7,4.8,25,H2O,25.0,1011
+DF,Free,Methoxy,fiber,7.5,3.3,25,PB,1440.0,1311
+FW,Chlorination,N-hexadecylamine,fiber,7,3.0,25,H2O,25.0,1012
+DF,Free,Methoxy,none,7,23.4,25,Toluene,1440.0,1318
+EF,Free,Free,none,5.2,1.0,25,H2O,120.0,1320
+FF,Free,Free,fiber,5.2,2.0,90,H2O,5.0,1015
+IF,Free,Free,none,5.8,0.2,25,H2O,,1017
+IF,Free,Free,fiber,5.8,10.0,25,H2O,,1017
+EF,Free,Free,none,5.2,5.0,25,H2O,120.0,1324
+FF,Free,Free,fiber,7,2.5,25,Chloroform,,1332
+FF,Free,Free,fiber,5.5,1.0,50,H2O,,1019
+KF,Free,Free,aggregate,5.2,2.0,25,H2O,,1334
+FF,Boc,Free,fiber,4.9,2.0,25,H2O,,1026
+GGG,Boc,Benzylation,none,7,100.0,20,Acetonitrile,1440.0,1033
+AGG,Boc,Benzylation,none,7,100.0,20,Chloroform,1440.0,1034
+aA,Free,Free,fiber,7,30.0,25,THF,,1350
+AGG,Boc,Benzylation,none,7,100.0,20,Methanol,1440.0,1034
+GAG,Boc,Benzylation,none,7,100.0,20,Chloroform,1440.0,1035
+FG,Free,Free,fiber,7.4,20.0,25,H2O,,1412
+GAG,Boc,Benzylation,none,7,100.0,20,Acetonitrile,1440.0,1035
+GAG,Boc,Benzylation,none,7,100.0,20,Ethanol,1440.0,1035
+FF,Boc,Free,fiber,7,0.2,25,H2O,35.0,1416
+FF,Boc,Free,fiber,7,0.5,25,H2O,35.0,1416
+AAG,Boc,Benzylation,none,7,100.0,20,Dichloromethane,1440.0,1035
+AAG,Boc,Benzylation,none,7,100.0,20,Acetonitrile,1440.0,1035
+VAG,Boc,Benzylation,none,7,100.0,20,Ethanol,1440.0,1036
+GVG,Boc,Benzylation,fiber,7,100.0,20,Toluene,1440.0,1037
+AVG,Boc,Benzylation,fiber,7,100.0,20,Chlorobenzene,1440.0,1039
+FF,Boc,Free,none,7,4.0,25,H2O,60.0,1417
+FF,Boc,Free,sphere,7,10.0,25,H2O,60.0,1417
+FF,Boc,Free,none,7,10.0,25,H2O,60.0,1417
+GGA,Boc,Benzylation,none,7,100.0,20,Chloroform,1440.0,1045
+LL,Fmoc,Free,fiber,4.3,2.443,4,H2O,1440.0,1443
+AGA,Boc,Benzylation,none,7,100.0,20,Acetone,1440.0,1045
+LL,Fmoc,Free,fiber,5.8,2.443,4,H2O,1440.0,1443
+AGA,Boc,Benzylation,none,7,100.0,20,Ethanol,1440.0,1045
+AGA,Boc,Benzylation,none,7,100.0,20,Methanol,1440.0,1045
+VGA,Boc,Benzylation,none,7,100.0,20,Chlorobenzene,1440.0,1045
+VGA,Boc,Benzylation,none,7,100.0,20,Ethyl acetate,1440.0,1045
+VGA,Boc,Benzylation,none,7,100.0,20,Chloroform,1440.0,1045
+VGA,Boc,Benzylation,none,7,100.0,20,Methanol,1440.0,1045
+GAA,Boc,Benzylation,fiber,7,100.0,20,Toluene,1440.0,1046
+GAA,Boc,Benzylation,none,7,100.0,20,Acetonitrile,1440.0,1047
+GAA,Boc,Benzylation,none,7,100.0,20,Ethanol,1440.0,1047
+EF,Free,Free,sphere,4.8,5.0,25,H2O,2160.0,1491
+AAA,Boc,Benzylation,fiber,7,100.0,20,Chlorobenzene,1440.0,1049
+AAA,Boc,Benzylation,fiber,7,100.0,20,Acetonitrile,1440.0,1050
+EF,Free,Free,sphere,7,4.6,25,H2O,1440.0,1496
+EF,Free,Free,sphere,7,8.2,25,H2O,1440.0,1496
+AAA,Boc,Benzylation,none,7,100.0,20,Dichloromethane,1440.0,1050
+AAA,Boc,Benzylation,none,7,100.0,20,Ethanol,1440.0,1050
+AAA,Boc,Benzylation,none,7,100.0,20,Acetone,1440.0,1050
+KF,Free,Free,sphere,7,8.2,25,H2O,1440.0,1497
+FF,Free,Free,fiber,7,4.0,25,H2O,,1499
+FF,Free,Free,fiber,7,10.0,25,Methanol,,1500
+GVA,Boc,Benzylation,none,7,100.0,20,Acetone,1440.0,1052
+AVA,Boc,Benzylation,none,7,100.0,20,Chloroform,1440.0,1052
+VVA,Boc,Benzylation,none,7,100.0,20,Chloroform,1440.0,1054
+VVA,Boc,Benzylation,none,7,100.0,20,Dichloromethane,1440.0,1054
+FF,Free,Free,fiber,5.2,2.0,180,H2O,180.0,1635
+AGV,Boc,Benzylation,none,7,100.0,20,Dichloromethane,1440.0,1054
+LL,Free,Free,fiber,5.2,2.0,180,H2O,90.0,1637
+AGV,Boc,Benzylation,none,7,100.0,20,Methanol,1440.0,1054
+VGV,Boc,Benzylation,none,7,100.0,20,Chlorobenzene,1440.0,1054
+VGV,Boc,Benzylation,none,7,100.0,20,Acetone,1440.0,1054
+FF,Fmoc,Free,fiber,7,15.0,25,Toluene,720.0,1644
+AAV,Boc,Benzylation,none,7,100.0,20,Acetone,1440.0,1054
+VAV,Boc,Benzylation,fiber,7,33.0,20,Hexane,1440.0,1055
+VAV,Boc,Benzylation,none,7,100.0,20,Chlorobenzene,1440.0,1055
+FF,Fmoc,Free,fiber,8.1,15.0,25,Methanol,720.0,1644
+FF,Fmoc,Free,fiber,7.8,15.0,25,H2O,720.0,1644
+VAV,Boc,Benzylation,none,7,100.0,20,Ethanol,1440.0,1055
+VAV,Boc,Benzylation,none,7,100.0,20,Methanol,1440.0,1055
+FF,Fmoc,Free,fiber,3.5,15.0,25,HFP,720.0,1644
+FF,Fmoc,Free,fiber,4,15.0,25,H2O,720.0,1644
+GVV,Boc,Benzylation,none,7,100.0,20,Dichloromethane,1440.0,1055
+GVV,Boc,Benzylation,none,7,100.0,20,Ethanol,1440.0,1055
+FF,Free,Free,sphere,7,1.472,70,DMSO,5.0,1696
+FFD,Fmoc,Free,fiber,5,5.49,25,H2O,,1707
+AVV,Boc,Benzylation,none,7,100.0,20,Ethyl acetate,1440.0,1055
+AVV,Boc,Benzylation,none,7,100.0,20,Dichloromethane,1440.0,1055
+AVV,Boc,Benzylation,none,7,100.0,20,Ethanol,1440.0,1055
+FWE,Fmoc,Free,fiber,6,0.74,25,H2O,1440.0,1728
+VVV,Boc,Benzylation,fiber,7,100.0,20,Acetonitrile,1440.0,1056
+VVV,Boc,Benzylation,none,7,100.0,20,Ethyl acetate,1440.0,1056
+VVV,Boc,Benzylation,none,7,100.0,20,Chloroform,1440.0,1056
+FFE,Fmoc,Free,fiber,6,0.7,25,H2O,1440.0,1733
+SAA,Boc,Benzylation,none,7,100.0,20,Acetonitrile,1440.0,1056
+FFA,Acetylation,Amidation,fiber,6.12,7.7,25,H2O,,1843
+FAA,Boc,Benzylation,none,7,100.0,20,Acetonitrile,1440.0,1058
+FVD,Free,Free,fiber,7,7.59,25,H2O,1440.0,1928
+FLD,Free,Free,fiber,7,7.87,25,H2O,1440.0,1928
+SVG,Boc,Benzylation,none,7,100.0,20,Ethyl acetate,1440.0,1060
+VI,Boc,Methoxy,fiber,7.5,0.72,25,H2O,30.0,1943
+VI,Boc,Methoxy,fiber,3.8,1.44,25,HFP/H2O,30.0,1943
+FVG,Boc,Benzylation,none,7,100.0,20,Ethyl acetate,1440.0,1064
+VI,Boc,Methoxy,fiber,4.5,0.72,25,HFP/H2O,30.0,1943
+VL,Boc,Methoxy,fiber,3.8,1.44,25,HFP/H2O,30.0,1944
+LV,Boc,Methoxy,fiber,8,1.44,25,H2O,30.0,1945
+VV,Boc,Methoxy,fiber,7,2.79,25,Methanol,30.0,1946
+fFV,Free,Free,fiber,7.4,6.7,25,PB,1440.0,1075
+KFG,Free,Free,sphere,7.4,0.5,60,H2O,,1078
+KFG,Free,Free,fiber,7.4,5.0,20,H2O,,1079
+KFG,Free,Free,fiber,7.4,5.0,30,H2O,,1079
+KFG,Free,Free,sphere,7.4,5.0,70,H2O,,1080
+FFH,Ferrocene,Free,fiber,7.2,31.78,20,PBS,0.5,1972
+FFH,Ferrocene,Free,sphere,7.2,31.78,30,PBS,0.5,1972
+FWK,Fmoc,Free,fiber,9,7.0,25,H2O,1440.0,1085
+FWK,Fmoc,Free,fiber,12,7.0,25,H2O,1440.0,1086
+FWK,Fmoc,Amidation,fiber,5.6,7.0,25,H2O,1440.0,1089
+FFF,Ferrocene,Free,sphere,7.2,32.38,25,Ehylacetate,0.5,1974
+DFF,Free,Free,none,7.4,12.82,25,PBS,,1983
+LII,Boc,Methoxy,sphere,7,10.0,25,Methanol,30.0,1107
+FF,Free,Free,fiber,7,0.55,8,H2O,,2018
+LFF,Free,Free,sphere,7.4,10.0,25,PBS,5.0,1111
+XFF,Boc,Free,fiber,7.46,3.19,32.5,PB,10.0,1124
+FF,Free,Free,fiber,7,0.66,16,H2O,,2018
+XFF,Boc,Free,none,7.46,2.32,32.5,PB,10.0,1124
+FF,Free,Free,fiber,7,0.627,20,H2O,,2018
+XFF,Boc,Free,none,7.46,3.24,42.5,PB,10.0,1124
+FF,Free,Free,none,7,0.48,24,H2O,,2018
+FF,Free,Free,fiber,7,0.715,28,H2O,,2018
+FF,Free,Free,none,7,0.52,28,H2O,,2018
+XFF,Boc,Free,fiber,7.46,4.84,46,PB,10.0,1124
+XFF,Boc,Free,fiber,7.46,5.39,47.5,PB,10.0,1124
+XFF,Boc,Free,none,7.46,3.92,47.5,PB,10.0,1124
+FF,Free,Free,fiber,7,1.056,42.5,H2O,,2018
+XFF,Boc,Free,none,7.46,4.32,50,PB,10.0,1124
+XFF,Boc,Free,fiber,7.46,6.6,51,PB,10.0,1124
+FF,Free,Free,none,7,0.736,44,H2O,,2018
+FF,Free,Free,none,7,0.816,48,H2O,,2018
+FF,Free,Free,fiber,7,1.232,52,H2O,,2018
+FF,Free,Free,fiber,7,1.375,56,H2O,,2018
+XFF,Boc,Free,fiber,7.46,10.44,67.5,PB,10.0,1124
+FF,Free,Free,none,7,1.125,56,H2O,,2018
+XFF,Boc,Free,none,7.46,7.83,67.5,PB,10.0,1124
+FF,Free,Free,fiber,7,1.54,60,H2O,,2018
+FF,Free,Free,fiber,7,1.68,60,H2O,,2018
+XFF,Boc,Free,fiber,7.46,9.57,67.5,PB,10.0,1124
+FF,Free,Free,fiber,7,1.5,56,H2O,,2018
+FF,Free,Free,fiber,7,1.738,64,H2O,,2018
+FF,Free,Free,fiber,7,1.896,64,H2O,,2018
+LLE,Acetylation,Free,aggregate,7,12.0,25,H2O,20160.0,1129
+MYD,Acetylation,Free,fiber,7,10.0,25,H2O,1.0,1128
+FF,Free,Free,none,7,1.422,64,H2O,,2018
+FF,Free,Free,none,7,1.62,68,H2O,,2018
+LLE,Acetylation,Free,aggregate,7,40.0,25,H2O,20160.0,1129
+FF,Free,Free,none,7,1.44,68,H2O,,2018
+PPSPPHPPDPPGY,Acetylated,Amidated,none,7,0.71,25,HEPES,,10.1021/acsomega.7b00928
+Ffv,Free,Free,fiber,7.4,7.0,25,PBS,,1146
+RSGQQKFQFQFEQQ,Free,Amidated,fiber,7.4,0.7,25,PBS,1440.0,10.1021/nn5051344
+IVD,Acetylation,Free,sphere,7,5.0,25,H2O,,1162
+IVD,Acetylation,Free,fiber,7,11.0,25,H2O,,1163
+FFG,Napthalene,Free,none,7.4,2.4,25,PBS,3.0,1172
+FFA,Napthalene,Free,none,7.4,4.5,25,PBS,3.0,1173
+FFA,Napthalene,Free,none,7.4,4.0,25,PBS,3.0,1173
+AHAHARA,Acetylated,Amidated,fiber,8,0.088,25,TRIS,0.0,10.1038/nchem.1894
+IHIHGYGHIHI,Acetylated,Amidated,fiber,8,0.088,25,TRIS,0.0,10.1039/C7NR02675G
+FFK,Napthalene,Free,fiber,7.4,2.4,25,PBS,3.0,1175
+FFK,Napthalene,Free,none,7.4,1.6,25,PBS,3.0,1175
+YVHVHVSV,Acetylated,Amidated,fiber,7.3,0.147,25,Hepes,0.0,10.1371/journal.pone.0143948
+RGD,Fmoc,Free,none,7.15,5.0,25,H2O,,1178
+FF,Fmoc,Free,fiber,10,0.26,25,H2O,,1194
+FF,Fmoc,Free,fiber,10.5,0.78,25,H2O,,1194
+YVSVDVSV,Acetylated,Amidated,fiber,7.3,0.147,25,Hepes,0.0,10.1371/journal.pone.0143948
+FF,Fmoc,Free,fiber,10.8,9.1,25,H2O,,1194
+FF,Fmoc,Free,none,10.8,4.29,25,H2O,,1194
+FF,Fmoc,Free,fiber,10.8,19.5,25,H2O,,1194
+FF,Fmoc,Free,none,10.9,19.5,25,H2O,,1194
+FF,Fmoc,Free,none,11,52.0,25,H2O,,1194
+YVDVDVHV,Acetylated,Amidated,fiber,7.3,0.147,25,Hepes,0.0,10.1371/journal.pone.0143948
+YVAVDVHV,Acetylated,Amidated,fiber,7.3,0.147,25,Hepes,0.0,10.1371/journal.pone.0143948
+FF,Napthalene,Free,fiber,6,10.0,25,H2O,1440.0,1235
+RPFMCTWSYCGKRFTRSDELQRHKRTHTGEK,Free,Amidated,none,7.5,0.57,25,H2O,60.0,10.1039/c9cy01364d
+FF,Napthalene,Free,fiber,6.2,15.0,25,H2O,1440.0,1235
+HYHYHYH,Acetylated,Amidated,fiber,8.5,0.0264,25,TRIS,1440.0,https://doi.org/10.1021/acscatal.0c03093
+FF,Napthalene,Free,fiber,6.4,15.0,25,H2O,1440.0,1235
+GSPLAQQIKNIHSFIHQAKAAGRMDEVRTLQENLHQLMHEYFQQSD,Free,Free,none,7,0.01,25,HEPES,,https://doi.org/10.1021/bi201881p
+RLVFFAH,Acetylated,Amidated,fiber,8,0.26,4,H2O,43200.0,https://doi.org/10.1039/D2SC03205H
+FEFEFKFK,Free,Free,fiber,6–7,7.847,90,water,,https://doi.org/10.1039/B811288F
+FEFKPEFKF,Free,Free,fiber,4–10,32.025,,water,,https://doi.org/10.1039/D4RA07065H
+FEFEPKFKF,Free,Free,fiber,2–5,32.025,,water,,https://doi.org/10.1039/D4RA07065H
+FF,Napthalene,Free,fiber,6.8,5.0,25,H2O,1440.0,1235
+RSAIEDLLFDKV,Free,Free,fiber,4,1.9950999999999999,,water,,https://pubs.acs.org/doi/10.1021/acsnano.1c10658
+FF,Napthalene,Free,fiber,7,20.0,25,H2O,1440.0,1235
+FLLNAAKD,Acetylated,Amidated,fiber,5.5,0.466,25,acetate buffer,,https://onlinelibrary.wiley.com/doi/10.1002/anie.202113403
+FF,Napthalene,Free,fiber,7,5.0,25,H2O,1440.0,1235
+FF,Napthalene,Free,fiber,7,15.0,25,H2O,1440.0,1235
+FF,Fmoc,Free,fiber,10.2,5.0,25,H2O,,1269
+FP,Fmoc,Free,none,3,5.0,25,H2O,,1270
