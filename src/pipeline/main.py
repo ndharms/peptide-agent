@@ -16,13 +16,13 @@ def generate_report(
     ),
     target_structural_assembly: str = typer.Option(
         ...,
-        "--target-structural-assembly",
-        "--target_structural_assembly",
+        "--target-morphology",
+        "--target_morphology",
         "-t",
-        help="Target structural assembly (e.g., 'beta-sheet')",
+        help="Target morphology or structural assembly (e.g., 'fiber' or 'sphere')",
     ),
     top_k: int = typer.Option(10, "--top-k", help="Number of docs to retrieve"),
-    llm_model: str = typer.Option("gemini-1.5-pro", "--llm-model", help="LLM model id"),
+    llm_model: str = typer.Option("gemini-2.5-flash", "--llm-model", help="LLM model id"),
     refresh_index: bool = typer.Option(
         False, "--refresh-index", help="Rebuild FAISS index cache"
     ),
