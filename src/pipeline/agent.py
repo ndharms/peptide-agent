@@ -168,15 +168,37 @@ def generate_report(state: AgentState):
     """Generate report using the configured LLM."""
     llm = create_llm(model=state.get("llm_model", LLM_MODEL_DEFAULT))
 
-    template_prompt = load_template_prompt()
+    template_prompt = """
+    Given:
+    - PEPTIDE_CODE: {peptide_code}
+    - TARGET_STRUCTURAL_ASSEMBLY: {target_structural_assembly}
+
+    Relevant contexts (papers and successful examples):
+    {contexts}
+
+    Produce a concise, evidence-grounded report recommending optimal experimental
+    conditions for synthesis toward the target structural assembly:
+    - pH
+    - Concentration (log M)
+    - Temperature (C)
+    - Solvent
+    - Estimated Time (minutes)
+
+    Use this schema as a guide: {schema}
+    """
     prompt = ChatPromptTemplate.from_template(template_prompt)
 
     chain = prompt | llm | StrOutputParser()
+
+    contexts = "\n\n".join(state.get("retrieved_docs", []))
+    schema_str = str(peptide_output_schema.schema)
 
     report = chain.invoke(
         {
             "peptide_code": state["peptide_code"],
             "target_structural_assembly": state["target_structural_assembly"],
+            "contexts": contexts,
+            "schema": schema_str,
         }
     )
     state["report"] = report
