@@ -1,0 +1,5 @@
+[
+    {"peptide_code": "FF", "target_structural_assembly": "nanofibers"},
+    {"peptide_code": "YY", "target_structural_assembly": "hydrogel"},
+    {"peptide_code": "GV", "target_structural_assembly": "nanotubes"}
+  ]

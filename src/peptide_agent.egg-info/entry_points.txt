@@ -1,0 +1,2 @@
+[console_scripts]
+peptide-agent = peptide_agent.cli:app
