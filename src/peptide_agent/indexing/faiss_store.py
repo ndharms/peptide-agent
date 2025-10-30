@@ -1,10 +1,10 @@
 import logging
 from pathlib import Path
 
-from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
 from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_text_splitters import CharacterTextSplitter
 
 logger = logging.getLogger(__name__)
 
