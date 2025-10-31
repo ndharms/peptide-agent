@@ -22,15 +22,23 @@ class IntervalBound(BaseModel):
     @classmethod
     def from_string(cls, interval_str: str) -> "IntervalBound":
         """Parse interval string like (5,7) or [5,7] or (5,7] etc."""
-        pattern = r"^([\[\(])(-?\d+\.?\d*),\s*(-?\d+\.?\d*)([\]\)])$"
+        # More flexible pattern that allows decimals like .5 and various number formats
+        pattern = r"^([\[\(])\s*(-?\d*\.?\d+)\s*,\s*(-?\d*\.?\d+)\s*([\]\)])$"
         match = re.match(pattern, interval_str.strip())
         if not match:
             raise ValueError(f"Invalid interval format: {interval_str}")
 
         left_bracket, lower, upper, right_bracket = match.groups()
+        
+        try:
+            lower_val = float(lower)
+            upper_val = float(upper)
+        except (ValueError, TypeError) as e:
+            raise ValueError(f"Could not convert bounds to float in interval: {interval_str}") from e
+        
         return cls(
-            lower=float(lower),
-            upper=float(upper),
+            lower=lower_val,
+            upper=upper_val,
             lower_inclusive=(left_bracket == "["),
             upper_inclusive=(right_bracket == "]"),
         )

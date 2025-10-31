@@ -263,7 +263,7 @@ def predict_batch(requests: list[dict[str, str]], settings: Settings) -> list[st
     batch_appendix = """
 Return ONLY a valid JSON array of objects with:
 [
-  {"id": <int>, "report": "<string>"},
+  {{"id": <int>, "report": "<string>"}},
   ...
 ]
 
