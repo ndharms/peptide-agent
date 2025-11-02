@@ -201,3 +201,4 @@ temp/
 # Docker
 .dockerignore
 docker-compose.override.yml
+src/peptide_agent.egg-info/*
