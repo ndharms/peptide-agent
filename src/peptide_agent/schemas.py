@@ -29,13 +29,15 @@ class IntervalBound(BaseModel):
             raise ValueError(f"Invalid interval format: {interval_str}")
 
         left_bracket, lower, upper, right_bracket = match.groups()
-        
+
         try:
             lower_val = float(lower)
             upper_val = float(upper)
         except (ValueError, TypeError) as e:
-            raise ValueError(f"Could not convert bounds to float in interval: {interval_str}") from e
-        
+            raise ValueError(
+                f"Could not convert bounds to float in interval: {interval_str}"
+            ) from e
+
         return cls(
             lower=lower_val,
             upper=upper_val,
